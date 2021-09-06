@@ -1,0 +1,791 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mSwipeRefreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/mTopBgVp"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_200"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/mSearchTv"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_30"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_12"
+                android:layout_marginRight="@dimen/dp_14"
+                android:background="@drawable/shape_search"
+                android:drawableLeft="@mipmap/home_search"
+                android:drawablePadding="@dimen/dp_4"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dp_16"
+                android:text="景区、酒店、美食、攻略"
+                android:textColor="@color/txt_gray"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/mAddressTv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/mAddressTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_16"
+                android:drawableLeft="@mipmap/home_chengshi"
+                android:drawablePadding="@dimen/dp_6"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_16"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/mSearchTv"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/mSearchTv"
+                tools:text="博乐" />
+
+            <io.agora.yview.banner.ConvenientBanner
+                android:id="@+id/mTopBanner"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_155"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_16"
+                android:layout_marginRight="@dimen/dp_16"
+                app:autoTurningTime="8000"
+                app:canLoop="true"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mSearchTv" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/mGuideCl1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_16"
+                android:layout_marginRight="@dimen/dp_16"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mTopBanner">
+
+                <TextView
+                    android:id="@+id/mScenicTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@mipmap/home_scenic_spot"
+                    android:drawablePadding="@dimen/dp_11"
+                    android:gravity="center"
+                    android:text="景区"
+                    android:textColor="@color/main_black"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/mHotelTv"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/mHotelTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@mipmap/home_hotel"
+                    android:drawablePadding="@dimen/dp_11"
+                    android:gravity="center"
+                    android:text="酒店"
+                    android:textColor="@color/main_black"
+                    app:layout_constraintLeft_toRightOf="@id/mScenicTv"
+                    app:layout_constraintRight_toLeftOf="@id/mDestinationTv"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/mDestinationTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@mipmap/home_yulechangsuo"
+                    android:drawablePadding="@dimen/dp_11"
+                    android:gravity="center"
+                    android:text="娱乐场所"
+                    android:textColor="@color/main_black"
+                    app:layout_constraintLeft_toRightOf="@id/mHotelTv"
+                    app:layout_constraintRight_toLeftOf="@id/mVideoTv"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/mVideoTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@mipmap/home_xcvidio"
+                    android:drawablePadding="@dimen/dp_11"
+                    android:gravity="center"
+                    android:text="宣传视频"
+                    android:textColor="@color/main_black"
+                    app:layout_constraintLeft_toRightOf="@id/mDestinationTv"
+                    app:layout_constraintRight_toLeftOf="@id/mStrategyTv"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/mStrategyTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@mipmap/home_csaiders"
+                    android:drawablePadding="@dimen/dp_11"
+                    android:gravity="center"
+                    android:text="城市攻略"
+                    android:textColor="@color/main_black"
+                    app:layout_constraintLeft_toRightOf="@id/mVideoTv"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/mGuideCl2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_19"
+                android:layout_marginRight="@dimen/dp_16"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mGuideCl1">
+
+                <TextView
+                    android:id="@+id/mParkTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@mipmap/home_parking"
+                    android:drawablePadding="@dimen/dp_8"
+                    android:gravity="center"
+                    android:text="停车场"
+                    android:textColor="@color/main_black"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/mToiletTv"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/mToiletTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@mipmap/home_toilet"
+                    android:drawablePadding="@dimen/dp_8"
+                    android:gravity="center"
+                    android:text="厕所"
+                    android:textColor="@color/main_black"
+                    app:layout_constraintLeft_toRightOf="@id/mParkTv"
+                    app:layout_constraintRight_toLeftOf="@id/mTravelAgencyTv"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/mTravelAgencyTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@mipmap/home_csaiders"
+                    android:drawablePadding="@dimen/dp_8"
+                    android:gravity="center"
+                    android:text="旅行社"
+                    android:textColor="@color/main_black"
+                    app:layout_constraintLeft_toRightOf="@id/mToiletTv"
+                    app:layout_constraintRight_toLeftOf="@id/mWeatherTv"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/mWeatherTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@mipmap/icon_bole_home_mall"
+                    android:drawablePadding="@dimen/dp_8"
+                    android:gravity="center"
+                    android:text="商城"
+                    android:textColor="@color/main_black"
+                    app:layout_constraintLeft_toRightOf="@id/mTravelAgencyTv"
+                    app:layout_constraintRight_toLeftOf="@id/mTrafficTv"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/mTrafficTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@mipmap/home_traffic"
+                    android:drawablePadding="@dimen/dp_8"
+                    android:gravity="center"
+                    android:text="交通信息"
+                    android:textColor="@color/main_black"
+                    app:layout_constraintLeft_toRightOf="@id/mWeatherTv"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/mAroundCl"
+                android:layout_width="@dimen/dp_162"
+                android:layout_height="@dimen/dp_140"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_25"
+                android:background="@mipmap/home_zhoubianxinxi"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mGuideCl2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_14"
+                    android:layout_marginTop="@dimen/dp_17"
+                    android:text="周边信息"
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/sp_13"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_14"
+                    android:layout_marginTop="@dimen/dp_37"
+                    android:layout_marginRight="@dimen/dp_17"
+                    android:text="查看各个景区信息，大美博乐等你来游"
+                    android:textColor="@color/txt_black_gray"
+                    android:textSize="@dimen/sp_11"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/mComplaintCl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_marginRight="@dimen/dp_16"
+                android:background="@mipmap/home_complaint"
+                app:layout_constraintLeft_toRightOf="@id/mAroundCl"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/mAroundCl">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_13"
+                    android:layout_marginTop="@dimen/dp_17"
+                    android:text="一键投诉"
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/sp_13"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_13"
+                    android:layout_marginTop="@dimen/dp_37"
+                    android:layout_marginBottom="@dimen/dp_17"
+                    android:text="投诉有门 实时高效"
+                    android:textColor="@color/txt_black_gray"
+                    android:textSize="@dimen/sp_10"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/mMapCl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_marginRight="@dimen/dp_16"
+                android:background="@mipmap/home_scenic_map"
+                app:layout_constraintBottom_toBottomOf="@id/mAroundCl"
+                app:layout_constraintLeft_toRightOf="@id/mAroundCl"
+                app:layout_constraintRight_toRightOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_13"
+                    android:layout_marginTop="@dimen/dp_17"
+                    android:text="景区地图"
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/sp_13"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_13"
+                    android:layout_marginTop="@dimen/dp_38"
+                    android:layout_marginBottom="@dimen/dp_17"
+                    android:text="您的景区向导小助手"
+                    android:textColor="@color/txt_black_gray"
+                    android:textSize="@dimen/sp_10"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <View
+                android:id="@+id/mDivideLine1"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_24"
+                android:background="#FAFEFE"
+                android:visibility="visible"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mAroundCl" />
+
+            <io.agora.yview.banner.ConvenientBanner
+                android:id="@+id/mRecommendCB"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@color/white"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/mDivideLine1" />
+
+            <View
+                android:id="@+id/mDivideLine2"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_10"
+                android:background="#FAFEFE"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mRecommendCB" />
+
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/mSeasonRecommendCl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mDivideLine2">
+
+                <TextView
+                    android:id="@+id/mSeasonRecommendTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_24"
+                    android:text="当季热推"
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/sp_19"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_11"
+                    android:src="@mipmap/home_zhuangshi"
+                    app:layout_constraintLeft_toRightOf="@id/mSeasonRecommendTv"
+                    app:layout_constraintTop_toTopOf="@id/mSeasonRecommendTv" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_11"
+                    android:text="Recommended for the season"
+                    android:textColor="#ffa0a0a0"
+                    android:textSize="@dimen/sp_11"
+                    app:layout_constraintBottom_toBottomOf="@+id/mSeasonRecommendTv"
+                    app:layout_constraintLeft_toRightOf="@id/mSeasonRecommendTv" />
+
+                <ImageView
+                    android:id="@+id/mSeasonMoreIv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:src="@mipmap/home_more"
+                    app:layout_constraintBottom_toBottomOf="@id/mSeasonRecommendTv"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/mSeasonRecommendTv" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/mSeasonRv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_23"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/mSeasonRecommendTv"
+                    tools:itemCount="1" />
+            </android.support.constraint.ConstraintLayout>
+
+
+            <View
+                android:id="@+id/mDivideLine3"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_10"
+                android:background="#FAFEFE"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mSeasonRecommendCl" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/mHotRecommendCl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mDivideLine3">
+
+                <TextView
+                    android:id="@+id/mHotRecommendTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_24"
+                    android:text="热门推荐"
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/sp_19"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_11"
+                    android:src="@mipmap/home_zhuangshi"
+                    app:layout_constraintLeft_toRightOf="@id/mHotRecommendTv"
+                    app:layout_constraintTop_toTopOf="@id/mHotRecommendTv" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_11"
+                    android:text="Popular Recommendation"
+                    android:textColor="#ffa0a0a0"
+                    android:textSize="@dimen/sp_11"
+                    app:layout_constraintBottom_toBottomOf="@+id/mHotRecommendTv"
+                    app:layout_constraintLeft_toRightOf="@id/mHotRecommendTv" />
+
+                <ImageView
+                    android:id="@+id/mHotRecommendMoreIv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:src="@mipmap/home_more"
+                    app:layout_constraintBottom_toBottomOf="@id/mHotRecommendTv"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/mHotRecommendTv" />
+
+
+                <LinearLayout
+                    android:id="@+id/mScenicTagLl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_22"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/mHotRecommendTv">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="景区"
+                        android:textColor="@color/main_black"
+                        android:textSize="@dimen/sp_14" />
+
+                    <View
+                        android:id="@+id/mScenicIndictor"
+                        android:layout_width="@dimen/dp_12"
+                        android:layout_height="@dimen/dp_2"
+                        android:layout_marginTop="5dp"
+                        android:background="#00ceb9" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mHotelTagLl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_22"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_constraintLeft_toRightOf="@id/mScenicTagLl"
+
+                    app:layout_constraintTop_toBottomOf="@id/mHotRecommendTv">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="酒店"
+                        android:textColor="@color/main_black"
+                        android:textSize="@dimen/sp_14" />
+
+                    <View
+                        android:id="@+id/mHotelIndictor"
+                        android:layout_width="@dimen/dp_12"
+                        android:layout_height="@dimen/dp_2"
+                        android:layout_marginTop="5dp"
+                        android:background="#00ceb9"
+                        android:visibility="invisible" />
+                </LinearLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/mHotRv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_23"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/mScenicTagLl"
+                    tools:itemCount="1" />
+            </android.support.constraint.ConstraintLayout>
+
+            <View
+                android:id="@+id/mDivideLine4"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_23"
+                android:background="#FAFEFE"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mHotRecommendCl" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/mStrategyCl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mDivideLine4">
+
+                <TextView
+                    android:id="@+id/mStrategyTitleTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_24"
+                    android:text="城市攻略"
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/sp_19"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_11"
+                    android:src="@mipmap/home_zhuangshi"
+                    app:layout_constraintLeft_toRightOf="@id/mStrategyTitleTv"
+                    app:layout_constraintTop_toTopOf="@id/mStrategyTitleTv" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_11"
+                    android:text="City Raiders"
+                    android:textColor="#ffa0a0a0"
+                    android:textSize="@dimen/sp_11"
+                    app:layout_constraintBottom_toBottomOf="@+id/mStrategyTitleTv"
+                    app:layout_constraintLeft_toRightOf="@id/mStrategyTitleTv" />
+
+                <ImageView
+                    android:id="@+id/mStrategyMoreIv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:src="@mipmap/home_more"
+                    app:layout_constraintBottom_toBottomOf="@id/mStrategyTitleTv"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/mStrategyTitleTv" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/mStrategyRv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_23"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/mStrategyTitleTv"
+                    tools:itemCount="1" />
+            </android.support.constraint.ConstraintLayout>
+
+            <View
+                android:id="@+id/mDivideLine6"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_23"
+                android:background="#FAFEFE"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mStrategyCl" />
+
+            <!--星级龙家乐-->
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/mFarmCl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_24"
+                android:visibility="visible"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mDivideLine6">
+
+                <TextView
+                    android:id="@+id/mFarmTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:text="农家乐"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_19"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/mFarmMoreLl"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="@+id/mFarmTv"
+                    app:layout_constraintLeft_toRightOf="@+id/mFarmTv"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/mFarmTv">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/home_zhuangshi" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Farmhouse"
+                            android:textColor="@color/text_gray"
+                            android:textSize="@dimen/sp_11" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_13"
+                        android:layout_height="@dimen/dp_13"
+                        android:layout_marginRight="@dimen/dp_16"
+                        android:src="@mipmap/home_more" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mFarmTv">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/ingdex_famer_rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_16"
+                        android:layout_marginTop="@dimen/dp_22"
+                        android:layout_marginBottom="@dimen/dp_24"
+                        android:nestedScrollingEnabled="false" />
+
+                </LinearLayout>
+
+            </android.support.constraint.ConstraintLayout>
+
+            <View
+                android:id="@+id/mDivideLine5"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_23"
+                android:background="#FAFEFE"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mFarmCl" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/mNewsCl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mDivideLine5">
+
+                <TextView
+                    android:id="@+id/mNewsTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_24"
+                    android:text="旅游资讯"
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/sp_19"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_11"
+                    android:src="@mipmap/home_zhuangshi"
+                    app:layout_constraintLeft_toRightOf="@id/mNewsTv"
+                    app:layout_constraintTop_toTopOf="@id/mNewsTv" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_11"
+                    android:text="Travel information"
+                    android:textColor="#ffa0a0a0"
+                    android:textSize="@dimen/sp_11"
+                    app:layout_constraintBottom_toBottomOf="@+id/mNewsTv"
+                    app:layout_constraintLeft_toRightOf="@id/mNewsTv" />
+
+                <ImageView
+                    android:id="@+id/mNewsMoreIv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:src="@mipmap/home_more"
+                    app:layout_constraintBottom_toBottomOf="@id/mNewsTv"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/mNewsTv" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/mNewsRv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/mNewsTv"
+                    tools:itemCount="1" />
+            </android.support.constraint.ConstraintLayout>
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+</android.support.v4.widget.SwipeRefreshLayout>

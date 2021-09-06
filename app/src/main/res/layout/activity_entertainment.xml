@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.example.tomasyb.baselib.widget.HeadView
+        android:id="@+id/mHeadView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/mRecommendTv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="娱乐推荐"
+                        android:textColor="@drawable/selector_gray_blue_txt"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:id="@+id/mIndictor0"
+                        android:layout_width="12dp"
+                        android:layout_height="2dp"
+                        android:background="#43bff8"
+                        android:visibility="invisible" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/mPlaceTv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="娱乐场所"
+                        android:textColor="@drawable/selector_gray_blue_txt"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:id="@+id/mIndictor1"
+                        android:layout_width="12dp"
+                        android:layout_height="2dp"
+                        android:background="#43bff8"
+                        android:visibility="invisible" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/gray_line" />
+
+            <include layout="@layout/include_search_center" />
+
+            <TextView
+                android:id="@+id/mTypeSelectTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableRight="@mipmap/list_arrow_expand"
+                android:drawablePadding="4dp"
+                android:paddingLeft="@dimen/dp_20"
+                android:paddingTop="20dp"
+                android:paddingRight="20dp"
+                android:text="娱乐类型"
+                android:textColor="@color/txt_black_gray"
+                android:textSize="13sp" />
+
+            <ViewAnimator
+                android:id="@+id/mViewAnimator"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/mRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <include layout="@layout/include_noda" />
+            </ViewAnimator>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/ll_opinion"
+    android:background="@color/main_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.example.tomasyb.baselib.widget.HeadView
+            android:id="@+id/headView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/feedback_top_bg">
+                    <TextView
+                        android:id="@+id/tv_hi"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/sp_22"
+                        android:textColor="@color/white"
+                        android:text="Hi,"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_toRightOf="@+id/tv_hi"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/sp_22"
+                        android:textColor="@color/white"
+                        android:text="Hi,"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_below="@+id/tv_hi"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:src="@mipmap/feedback_top_quotation_left"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <LinearLayout
+                        android:id="@+id/ll_last"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_marginLeft="@dimen/dp_50"
+                        android:layout_below="@+id/tv_hi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_13"
+                            android:text="您尽可畅所欲言、言辞犀利,"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_13"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:text="我们虚心接受每一个意见与想法。"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:id="@+id/tv_last"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_13"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:text="希望我们共同努力让这个产品越来越好。"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <ImageView
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:layout_marginBottom="@dimen/dp_10"
+                        android:layout_toRightOf="@+id/ll_last"
+                        android:layout_below="@+id/ll_last"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:src="@mipmap/feedback_top_quotation_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:textSize="@dimen/sp_20"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_black"
+                        android:text="意见反馈"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <FrameLayout
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="@dimen/dp_10"
+                        android:paddingTop="@dimen/dp_10">
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/rv_tag"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    </FrameLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <EditText
+                            android:cursorVisible="true"
+                            android:textCursorDrawable="@drawable/shap_edittext_show"
+                            android:id="@+id/edt_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:hint="你敢提，我就敢改"
+                            android:maxLines="5"
+                            android:minLines="5"
+                            android:padding="@dimen/dp_10"
+                            android:maxLength="500"
+                            android:textColor="#666666"
+                            android:textSize="@dimen/sp_14" />
+                        <TextView
+                            android:gravity="right"
+                            android:id="@+id/txt_count"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentBottom="true"
+                            android:paddingBottom="@dimen/dp_10"
+                            android:paddingRight="@dimen/dp_10"
+                            android:text="0/500"
+                            android:textColor="#666666"
+                            android:textSize="@dimen/sp_14" />
+                    </LinearLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/recyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:background="@android:color/white"
+                            android:paddingLeft="@dimen/dp_10"/>
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_1"
+                        android:background="@color/gray_line" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/dp_10">
+
+                        <EditText
+                            android:cursorVisible="true"
+                            android:textCursorDrawable="@drawable/shap_edittext_show"
+                            android:id="@+id/edt_phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="phone"
+                            android:hint="请输入手机号码,方便我们与您联系"
+                            android:maxLength="11"
+                            android:background="@null"
+                            android:textColor="#666666"
+                            android:textSize="@dimen/sp_18" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:background="@drawable/shape_green_radius"
+                    android:gravity="center"
+                    android:padding="@dimen/dp_10"
+                    android:text="提交"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/sp_14" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</FrameLayout>

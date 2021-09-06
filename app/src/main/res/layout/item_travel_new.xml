@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="@dimen/dp_10">
+    <ImageView
+        android:id="@+id/img_head"
+        android:layout_width="120dp"
+        android:layout_height="90dp" />
+    <LinearLayout
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tv_title"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/main_black"
+            android:text="网相册"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:drawablePadding="@dimen/dp_5"
+            android:id="@+id/tv_phone"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textSize="14sp"
+            android:gravity="center_vertical"
+            android:text="dsfdf"
+            android:drawableRight="@mipmap/list_icon_phone"
+            android:textColor="@color/main_black_gray"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        <LinearLayout
+            android:id="@+id/ll_address"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/tv_address"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textSize="14sp"
+                android:textColor="@color/main_black_gray"
+                android:text="网相册"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:id="@+id/img_location"
+                android:src="@mipmap/list_icon_navigation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

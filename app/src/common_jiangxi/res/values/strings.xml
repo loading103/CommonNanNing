@@ -1,0 +1,134 @@
+<resources>
+    <string name="app_name">畅游江西</string>
+    <string-array name="mine_apply_name">
+        <item>我的投诉</item>
+        <item>在线留言</item>
+        <item>意见反馈</item>
+    </string-array>
+    <string-array name="mine_apply_id">
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+    <string-array name="main_page_index">
+        <item>首页</item>
+        <item>服务</item>
+        <item>我的</item>
+    </string-array>
+    <string-array name="find_titles">
+        <item>节庆活动</item>
+        <item>资讯南宁</item>
+        <item>最美南宁</item>
+        <item>风味南宁</item>
+        <item>物产南宁</item>
+    </string-array>
+    <!--首页菜单名称集合-->
+    <string-array name="index_menu_name">
+        <item>景区</item>
+        <item>酒店</item>
+        <item>购物</item>
+        <item>全景</item>
+        <item>特产</item>
+        <item>停车场</item>
+        <item>厕所</item>
+        <item>旅行社</item>
+        <item>加油站</item>
+        <item>天气</item>
+    </string-array>
+    <!--首页菜单标识集合-->
+    <string-array name="index_menu_type">
+        <item>scenic</item>
+        <item>hotel</item>
+        <item>shopping</item>
+        <item>panorama</item>
+        <item>specialty</item>
+        <item>parking</item>
+        <item>toilet</item>
+        <item>travel</item>
+        <item>gas</item>
+        <item>weather</item>
+    </string-array>
+    <!--服务标题-->
+    <string-array name="server_menu_title">
+        <item>公交查询</item>
+        <item>加油站查询</item>
+        <item>在线投诉</item>
+        <item>购物场所</item>
+        <item>在线留言</item>
+        <item>旅行社</item>
+        <item>旅游厕所</item>
+    </string-array>
+    <!--服务描述-->
+    <string-array name="server_menu_info">
+        <item>Bus inquiry</item>
+        <item>Gas Station inquiry</item>
+        <item>Online complaint</item>
+        <item>Shopping place</item>
+        <item>Online message</item>
+        <item>Travel agency</item>
+        <item>Tourist toilet</item>
+    </string-array>
+    <!--服务内容-->
+    <string-array name="server_menu_content">
+        <item>一手信息 尽在掌握</item>
+        <item>大胆出行 贴心为您</item>
+        <item>投诉有门 实时高效</item>
+        <item>精挑细选 放心之选</item>
+        <item>畅所欲言 勇于表达</item>
+        <item>随心出发 欢乐有趣</item>
+        <item>智能服务 方便快捷</item>
+    </string-array>
+    <!--服务标题颜色-->
+    <array name="server_title_color">
+        <item>#ff9405</item>
+        <item>#09ba07</item>
+        <item>#03a8cf</item>
+        <item>#877dce</item>
+        <item>#f36e4a</item>
+        <item>#ca7d22</item>
+        <item>#a79807</item>
+    </array>
+    <!--服务描述颜色-->
+    <array name="server_info_color">
+        <item>#fcdb84</item>
+        <item>#a3e6a2</item>
+        <item>#90d5e5</item>
+        <item>#bab4e3</item>
+        <item>#f36e4a</item>
+        <item>#e2b988</item>
+        <item>#d4c856</item>
+    </array>
+    <!--服务背景颜色-->
+    <array name="server_bg_img">
+        <item>@mipmap/service_robot_bg</item>
+        <item>@mipmap/service_stroke_bg</item>
+        <item>@mipmap/service_complaint_bg</item>
+        <item>@mipmap/service_news_bg</item>
+        <item>@mipmap/service_traffic_bg</item>
+        <item>@mipmap/service_travel_agency_bg</item>
+        <item>@mipmap/service_toilet_bg</item>
+    </array>
+    <!--服务图标-->
+    <array name="server_icon">
+        <item>@mipmap/service_bus_pic</item>
+        <item>@mipmap/service_gas_pic</item>
+        <item>@mipmap/service_complaint_pic</item>
+        <item>@mipmap/service_shopping_pic</item>
+        <item>@mipmap/service_message_pic</item>
+        <item>@mipmap/service_travel_agency_pic</item>
+        <item>@mipmap/service_toilet_pic</item>
+    </array>
+
+    <!--服务类型标识-->
+    <string-array name="server_type">
+        <item>bus</item>
+        <item>gas</item>
+        <item>complaint</item>
+        <item>shopping</item>
+        <item>onlineMessage</item>
+        <item>travelAgency</item>
+        <item>toilet</item>
+    </string-array>
+    <string name="activityTitle">精彩活动</string>
+    <string name="activityInfo">Exciting Activities</string>
+</resources>

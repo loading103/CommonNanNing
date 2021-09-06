@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="BaseQuickAdapter_viewholder_support" type="id"/>
+    <item name="BaseQuickAdapter_swiping_support" type="id"/>
+    <item name="BaseQuickAdapter_dragging_support" type="id"/>
+    <item name="BaseQuickAdapter_databinding_support" type="id"/>
+
+    <!---->
+    <item type="id" name="statusbarutil_fake_status_bar_view" />
+    <item type="id" name="statusbarutil_translucent_view" />
+    <!--banner-->
+    <item name="banner_indicatorId" type="id" />
+    <!--日历-->
+    <item type="id" name="day_view_adapter_class"/>
+    <!--bottombar-->
+    <item name="bb_bottom_bar_color_id" type="id"/>
+    <item name="bb_bottom_bar_appearance_id" type="id"/>
+    <item name="fab_label" type="id"/>
+</resources>

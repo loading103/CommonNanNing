@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.example.tomasyb.baselib.widget.HeadView
+        android:id="@+id/head_mine_collect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <include layout="@layout/include_line_one" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="">
+
+        <RadioGroup
+            android:id="@+id/rg_mine_collect"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp_10"
+            android:orientation="horizontal"
+            android:scrollbars="none" />
+
+    </HorizontalScrollView>
+
+    <include layout="@layout/include_line_one" />
+    <LinearLayout
+        android:layout_marginTop="@dimen/dp_10"
+            android:id="@+id/ll_mine_collect"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/ll_top"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_16"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_mine_collect_total"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="您累计收藏0个好物"
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/sp_18"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/iv_mine_collect_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:padding="@dimen/dp_10"
+                    android:src="@mipmap/usercenter_icon_delect_normal" />
+            </LinearLayout>
+
+            <!--智能刷新控件-->
+            <com.example.tomasyb.baselib.refresh.SmartRefreshLayout
+                android:id="@+id/refreshlayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srlEnablePreviewInEditMode="false">
+                <!--头部-->
+                <com.example.tomasyb.baselib.refresh.header.ClassicsHeader
+                    app:srlAccentColor="@color/main_gray"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srlFinishDuration="500"
+                    app:srlEnableLastTime="true"
+                    app:srlClassicsSpinnerStyle="FixedBehind"
+                    app:srlTextSizeTitle="@dimen/sp_16"
+                    app:srlTextSizeTime="@dimen/dp_10"
+                    app:srlTextTimeMarginTop="@dimen/dp_2"
+                    app:srlDrawableArrowSize="@dimen/dp_20"
+                    app:srlDrawableProgressSize="@dimen/dp_20"
+                    app:srlDrawableMarginRight="@dimen/dp_20"
+                    app:srlDrawableProgress="@drawable/ic_progress_puzzle"/>
+                <ViewAnimator
+                    android:id="@+id/collect_va"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/pull_list_mine_collect"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scrollbars="none" />
+                    <include layout="@layout/include_noda"/>
+                </ViewAnimator>
+            </com.example.tomasyb.baselib.refresh.SmartRefreshLayout>
+
+        </LinearLayout>
+
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/dp_350"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent">
+
+    <LinearLayout
+        android:id="@+id/ll_guide_dialog_scenic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/guide_pop_big"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txt_title"
+                android:layout_width="@dimen/dp_250"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:padding="@dimen/dp_10"
+                android:singleLine="true"
+                android:text="江西千户苗寨"
+                android:textColor="@color/main_black"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_5"
+                android:padding="@dimen/dp_10"
+                android:src="@mipmap/guide_close" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:background="#ebebeb" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_5"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="@dimen/dp_100"
+                android:layout_height="wrap_content">
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/img_tag"
+                    android:layout_width="@dimen/dp_100"
+                    android:layout_height="wrap_content"
+                    app:actualImageScaleType="centerCrop"
+                    app:failureImage="@mipmap/banner_default"
+                    app:failureImageScaleType="centerCrop"
+                    app:placeholderImage="@mipmap/banner_default"
+                    app:placeholderImageScaleType="centerCrop"
+                    app:roundedCornerRadius="@dimen/dp_5"
+                    app:viewAspectRatio="1.33" />
+
+                <TextView
+                    android:id="@+id/tv_dialog_distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/main_black"
+                    android:padding="@dimen/dp_5"
+                    android:text="1.2km"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_10" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_marginRight="@dimen/dp_5"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txt_content"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="江西千户苗寨是一个保存苗族原始生态"
+                    android:textColor="@color/text_gray"
+                    android:textSize="@dimen/sp_11" />
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp_200"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txt_palyAudio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableTop="@mipmap/guide_pop_voice"
+                        android:drawablePadding="@dimen/dp_3"
+                        android:gravity="center"
+                        android:text="解说"
+                        android:textColor="@color/main_black"
+                        android:textSize="@dimen/sp_12" />
+
+                    <TextView
+                        android:id="@+id/txt_information"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:drawableTop="@mipmap/guide_mappop_button_detail"
+                        android:drawablePadding="@dimen/dp_3"
+                        android:gravity="center"
+                        android:text="详情"
+                        android:textColor="@color/main_black"
+                        android:textSize="@dimen/sp_12" />
+
+                    <TextView
+                        android:id="@+id/txt_scenic_map"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:drawableTop="@mipmap/guide_mappop_map"
+                        android:drawablePadding="@dimen/dp_3"
+                        android:gravity="center"
+                        android:text="地图"
+                        android:textColor="@color/main_black"
+                        android:textSize="@dimen/sp_12"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/txt_scenic_daohang"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:drawableTop="@mipmap/guide_details_button_navigation_normal"
+                        android:drawablePadding="@dimen/dp_3"
+                        android:gravity="center"
+                        android:text="导航"
+                        android:textColor="@color/main_black"
+                        android:textSize="@dimen/sp_12"
+                        android:visibility="visible" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

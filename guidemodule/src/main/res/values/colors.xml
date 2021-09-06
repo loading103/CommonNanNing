@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#ff4056</color>
+    <color name="red">#ff4d41</color>
+
+    <color name="select_gray">#e6e6e6</color>
+    <color name="gray_line">#e2e2e2</color>
+    <drawable name="select_gray">#e0e0e0</drawable>
+    <color name="light_green">#DCF0EE</color>
+    <!-- 浅黑色 -->
+    <color name="shallowBlack">#454545</color>
+    <!-- 透明 -->
+    <color name="transparent">#00000000</color>
+    <color name="text_black">#303030</color>
+    <color name="text_gray">#999994</color>
+    <color name="search_bg">#F0F1F2</color>
+    <color name="title_red">#ffFF5000</color>
+    <color name="gray_text">#929292</color>
+    <color name="white">#ffffffff</color>
+    <color name="main">#00D0BA</color>
+    <color name="main_gray">#B2B2B2</color>
+    <color name="main_black">#333333</color>
+    <color name="txt_orange">#ff7e00</color>
+    <color name="txt_gray">#999999</color>
+    <color name="txt_black_gray">#666666</color>
+    <drawable name="main1">#B72727</drawable>
+    <color name="main2">#00cfb7</color>
+    <color name="green">#63D416</color>
+    <color name="black">#000000</color>
+    <color name="select_space">#F5F5F5</color>
+    <color name="yellow">#F2F3F4</color>
+
+    <color name="video_line">#89D200</color>
+    <color name="voice_line">#FD8D37</color>
+    <color name="seven_line">#8A9EFF</color>
+    <color name="ar_line">#2DB2FF</color>
+
+    <color name="calendar_active_month_bg">#fff5f7f9</color>
+    <color name="calendar_bg">#ffffffff</color>
+    <color name="calendar_divider">#ffbababa</color>
+    <color name="calendar_inactive_month_bg">#ffd7d9db</color>
+    <color name="calendar_selected_day_bg">#00CEB9</color>
+    <color name="calendar_highlighted_day_bg">#ccffcc</color>
+    <color name="calendar_selected_range_bg">#00CEB9</color>
+    <color name="calendar_text_inactive">#40778088</color>
+    <color name="calendar_text_active">#ff778088</color>
+    <color name="calendar_text_selected">#ffffffff</color>
+    <color name="calendar_text_unselectable">#7f778088</color>
+    <color name="calendar_text_highlighted">#ff778088</color>
+
+    <color name="main_bg">#f1f2f3</color>
+
+    <drawable name="white">#ffffffff</drawable>
+    <drawable name="main">#00CEB9</drawable>
+
+
+    <color name="tagLight">#b1c914</color>
+    <color name="tagDark">#FF4081</color>
+
+    <color name="strategy_bg">#FB5F41</color>
+    <color name="hotel_bg">#009CFF</color>
+    <color name="scenery_bg">#FF7E00</color>
+
+    <color name="robot_type_gray">#F2F2F2</color>
+    <color name="grey">#ebebeb</color>
+    <color name="darkgrey">#C0C0C0</color>
+    <color name="f850_default_blue">#0079ff</color>
+
+    <drawable name="transparent">#00000000</drawable>
+
+
+    <color name="header_toast_bg">#ccebfc</color>
+    <color name="header_toast">#024ca1</color>
+    <color name="header_toast_line">#abdaf4</color>
+    <color name="offline_down_title">#909090</color>
+    <color name="offline_head_font">#FFFFFF</color>
+    <color name="gary">#898989</color>
+    <color name="taobao_black">#333333</color>
+    <color name="offline_down_size">#777777</color>
+    <color name="gray_lite">#c5c5c5</color>
+    <color name="gray_bg_line">#e2e2e2</color>
+    <color name="progress_background">#ededed</color>
+    <color name="blue">#4c90f9</color>
+    <color name="itemlist">#f4f4f4</color>
+    <color name="act_background">#efefef</color>
+    <color name="phone_bg">#f6f6f6</color>
+    <color name="translucent">#66000000</color>
+    <color name="color666">#661B85FF</color>
+    <color name="color_1B85FF">#1B85FF</color>
+    <color name="color_00CEB9">#00CEB9</color>
+    <color name="z_transparent">#00000000</color>
+
+    <color name="color_tag">#ff6c00</color>
+    <color name="color_border">#DEE0E4</color>
+    <color name="primary_light">#f5f5f5</color>
+
+    <drawable name="select_space">#f2f2f2</drawable>
+    <!-- 浅黑色 -->
+
+    <drawable name="text_gray">#999999</drawable>
+
+    <color name="app_color">#00cfb7</color>
+
+    <color name="mine_menu">#d0f4e8</color>
+    <drawable name="mine_menu">#d0f4e8</drawable>
+
+    <color name="gray_bg">#faf9fa</color>
+    <color name="orange">#ff9b00</color>
+    <color name="orange_yellow">#ff9e05</color>
+    <color name="searchLike">#FFA800</color>
+    <color name="searchHot">#F66C24</color>
+
+    <color name="caldroid_white">#FFFFFF</color>
+    <color name="caldroid_black">#000000</color>
+    <color name="caldroid_transparent">#00000000</color>
+    <!-- For settings framework -->
+    <color name="caldroid_lighter_gray">#ddd</color>
+    <color name="caldroid_gray">#CCC</color>
+    <color name="caldroid_darker_gray">#aaa</color>
+    <!-- A light Holo shade of blue -->
+    <color name="caldroid_holo_blue_light">#ff33b5e5</color>
+    <!-- A dark Holo shade of blue -->
+    <color name="caldroid_holo_blue_dark">#ff0099cc</color>
+    <!-- A really bright Holo shade of blue -->
+    <color name="caldroid_sky_blue">#FFA3E8F7</color>
+
+    <color name="view_bg">#F8F8F8</color>
+    <color name="z_white">#FFFFFF</color>
+    <color name="z_red">#F34F57</color>
+    <color name="txt_black">#2F2F2F</color>
+    <color name="txt_green">#19B990</color>
+    <color name="txt_3">#333333</color>
+    <color name="txt_6">#666666</color>
+    <color name="txt_9">#999999</color>
+
+    <color name="flow_red">#fc341e</color>
+    <color name="flow_orange">#ff8f35</color>
+    <color name="flow_yellow">#f3c802</color>
+    <color name="flow_green">#7cb424</color>
+    <color name="flow_blue">#05b800</color>
+</resources>

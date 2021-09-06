@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no,email=no" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,viewport-fit=cover" />
+    <meta name="keywords" content="成都中科大旗软件有限公司" />
+    <meta name="description" content="成都中科大旗软件有限公司" />
+    <meta name="author" content="成都中科大旗软件有限公司" />
+    <link rel="stylesheet" href="css/globle.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/css/swiper.min.css">
+    <script src="./js/jquery-1.8.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.min.js"></script>
+    <title>列表页面</title>
+    <script>
+        (function (doc, win) {
+            let docEl = doc.documentElement
+            let isIOS = navigator.userAgent.match(/iphone|ipod|ipad|android/gi)
+            let dpr = isIOS ? Math.min(win.devicePixelRatio, 3) : 1
+            let resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize'
+
+            docEl.dataset.dpr = dpr
+            let meta = doc.getElementsByTagName('meta')
+            let head = doc.getElementsByTagName('head')[0]
+
+            // 判断是否有vierport;
+            // 如果有则删除
+
+            function removeViewport() {
+                for (let i = 0; i < meta.length; i++) {
+                    if (meta[i].getAttribute('name') === 'viewport') {
+                        head.removeChild(meta[i])
+                    }
+                }
+            }
+
+            removeViewport()
+
+            // 创建节点
+            function createViewport() {
+                let metaEl = doc.createElement('meta')
+                metaEl.setAttribute('name', 'viewport')
+                metaEl.setAttribute('content', 'width=device-width, initial-scale=' + 1 / dpr + ', maximum-scale=' + 1 / dpr + ', minimum-scale=' + 1 / dpr + ', user-scalable=no')
+                head.insertBefore(metaEl, head.children[0])
+            }
+
+            createViewport()
+            let recalc = function () {
+                let width = docEl.clientWidth
+                if (width / dpr > 750) {
+                    width = 750 * dpr
+                }
+                docEl.style.fontSize = 100 * (width / 750) + 'px'
+            }
+            recalc()
+            if (!doc.addEventListener) return
+            win.addEventListener(resizeEvt, recalc, false)
+        })(document, window)
+    </script>
+</head>
+
+<body>
+    <div class="list">
+        <div class="list-banner">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+
+                </div>
+                <div class="swiper-pagination swiper-pagination-bullets"></div>
+            </div>
+        </div>
+        <ul class="space-list">
+        </ul>
+        <p class="daq-no-data-text"><span>没有更多了</span></p>
+    </div>
+
+    <script src="./js/config.js"></script>
+    <script>
+        $(function () {
+
+            getList()
+            getBanner()
+            let type = getUrlparams('typeId')
+            switch (parseInt(type)) {
+                case 55:
+                    document.title = '博物馆'
+                    break
+                case 56:
+                    document.title = '图书馆'
+                    break
+            }
+        })
+        // banner
+        function getBanner() {
+            $.ajax({
+                url: url + 'ad/list',
+                data: {
+                    region: region,
+                    locationCode: getUrlparams('locationCode')
+                },
+                success: function (data) {
+                    let content = $('.swiper-wrapper')
+                    let pagination = $('.swiper-pagination')
+                    if (data.code === 0) {
+                        let list = data.data.adList
+                        let html = ''
+                        if (!list.length) {
+                            content.html('<div class="swiper-slide daq-no-data">暂无数据</div>')
+                            return
+                        }
+                        if (list.length === 1) {
+                            pagination.hide()
+                        }
+                        list.map((item) => {
+                            html += '<a class="swiper-slide" href="' + (item.link || 'javascript:;') + '"><img src="' + item.fileUpload + '" class="daq-img" alt=""></a>'
+                        })
+                        content.html(html)
+                        var swiper = new Swiper('.swiper-container', {
+                            pagination: {
+                                el: '.swiper-pagination'
+                            },
+                        });
+                    } else {
+                        content.html('<div class="swiper-slide daq-no-data">暂无数据</div>')
+                        pagination.hide()
+                    }
+                }
+            })
+        }
+        // 列表
+        function getList() {
+            $.ajax({
+                url: url + 'venue/getList',
+                data: {
+                    region: region,
+                    typeId: getUrlparams('typeId'),
+                    pageSize: 1000
+                },
+                success: function (data) {
+                    let content = $('.space-list')
+                    if (data.code === 0) {
+                        let list = data.datas
+                        let html = ''
+                        if (!list.length) {
+                            content.html('<div class="daq-no-data">暂无数据</div>')
+                            $('.daq-no-data-text').hide()
+                            return
+                        }
+                        list.map((item) => {
+                            html += '<li class="item">'
+                            html += '<a href="./list-desc.html?id=' + item.id + '">'
+                            html += '<p class="img-box">'
+                            html += '<img src="' + item.coverFourToThree + '" class="daq-img" alt=""/>'
+                            html += '</p>'
+                            html += '<div class="content">'
+                            html += '<div class="content-top">'
+                            html += '<h4 class="title">' + item.name + '</h4>'
+                            html += '<p class="address">距您'+js.calculateLineDistance(item.latitude,item.longitude)+'，' + item.address + '</p>'
+                            html += '</div>'
+                            html += '</div>'
+                            html += '</a>'
+                            html += '</li>'
+                        })
+                        content.html(html)
+                    }
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>

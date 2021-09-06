@@ -1,0 +1,15 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/transparent" />
+            <corners android:radius="6dp" /> <!--弧度 -->
+        </shape>
+    </item>
+    <item> <!--边框宽度 -->
+        <shape android:shape="rectangle">
+            <solid android:color="@color/b_main_white"/>
+            <corners android:radius="6dp" />
+            <padding android:bottom="1dp" android:left="1dp" android:right="1dp" android:top="1dp"/>
+        </shape>
+    </item>
+</layer-list>

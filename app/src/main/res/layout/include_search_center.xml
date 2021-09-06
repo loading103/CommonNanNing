@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/main_bg">
+
+
+    <io.agora.yview.view.CenterDrawableEdittext
+        android:cursorVisible="true"
+        android:textCursorDrawable="@drawable/shap_edittext_show"
+        android:id="@+id/scenic_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_8"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginRight="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_8"
+        android:background="@drawable/shape_route_type_unseleted"
+        android:drawableLeft="@mipmap/home_icon_search"
+        android:drawablePadding="@dimen/dp_8"
+        android:ellipsize="end"
+        android:hint="请输入关键字进行搜索"
+        android:imeOptions="actionSearch"
+        android:padding="@dimen/dp_8"
+        android:singleLine="true"
+        android:textSize="@dimen/sp_12" />
+</LinearLayout>

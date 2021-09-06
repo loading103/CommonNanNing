@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_white"
+    android:fitsSystemWindows="true">
+
+
+    <com.example.tomasyb.baselib.widget.HeadView
+        android:id="@+id/route_help_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/coordinator"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/route_help_title">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gray_back"
+                android:minHeight="@dimen/dp_48"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <io.agora.yview.banner.ConvenientBanner
+                    android:id="@+id/banner_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_150"
+                    app:autoTurningTime="3000"
+                    app:canLoop="true"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/location"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_48"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:drawableLeft="@mipmap/list_position"
+                    android:drawablePadding="@dimen/dp_8"
+                    android:drawableRight="@drawable/selector_reflash"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:maxLines="2"
+                    android:text="未能获取当前位置,请开启定位"
+                    android:textColor="@color/b_text_grayer"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/banner_view" />
+
+                <!--<ImageView
+                    android:id="@+id/reflashList"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:clickable="true"
+                    android:padding="14dp"
+                    android:src="@drawable/selector_reflash"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/banner_view" />-->
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_44"
+                android:gravity="center"
+                android:background="@color/white"
+                android:text="这是悬停部分"
+                app:layout_scrollFlags="snap">
+
+                <TextView
+                    android:id="@+id/type_choose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:drawableRight="@drawable/selected_scenic_filter_arrow"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/dp_16"
+                    android:text="类型选择  "
+                    android:textColor="@drawable/selector_text_blue"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/smart_choose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_48"
+                    android:drawableRight="@drawable/selected_scenic_filter_arrow"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/dp_24"
+                    android:text="智能排序  "
+                    android:textColor="@drawable/selector_text_blue"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/type_choose"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <com.example.tomasyb.baselib.refresh.SmartRefreshLayout
+            android:id="@+id/swipe_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:srlEnablePreviewInEditMode="false">
+            <!--头部-->
+            <com.example.tomasyb.baselib.refresh.header.ClassicsHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srlAccentColor="@color/main_gray"
+                app:srlClassicsSpinnerStyle="FixedBehind"
+                app:srlDrawableArrowSize="@dimen/dp_20"
+                app:srlDrawableMarginRight="@dimen/dp_20"
+                app:srlDrawableProgress="@drawable/ic_progress_puzzle"
+                app:srlDrawableProgressSize="@dimen/dp_20"
+                app:srlEnableLastTime="true"
+                app:srlFinishDuration="500"
+                app:srlTextSizeTime="@dimen/dp_10"
+                app:srlTextSizeTitle="@dimen/sp_16"
+                app:srlTextTimeMarginTop="@dimen/dp_2" />
+
+            <ViewAnimator
+                android:id="@+id/view_animator"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/main_white" />
+
+                <include layout="@layout/include_noda" />
+            </ViewAnimator>
+
+        </com.example.tomasyb.baselib.refresh.SmartRefreshLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
+
+    <io.agora.yview.view.CenterDrawableEdittext
+        android:id="@+id/scenic_search"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_30"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginRight="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@drawable/shape_route_type_unseleted"
+        android:cursorVisible="true"
+        android:drawableLeft="@mipmap/home_icon_search"
+        android:drawablePadding="@dimen/dp_8"
+        android:ellipsize="end"
+        android:hint="请输入搜索关键字"
+        android:imeOptions="actionSearch"
+        android:padding="@dimen/dp_6"
+        android:paddingLeft="@dimen/dp_16"
+        android:singleLine="true"
+        android:textCursorDrawable="@drawable/shap_edittext_show"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/route_help_title" />
+
+</android.support.constraint.ConstraintLayout>

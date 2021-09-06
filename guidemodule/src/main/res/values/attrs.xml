@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="taskDownLoadView">
+        <attr name="startCricleColor" format="color"></attr>
+        <attr name="progressCricleColor" format="color"></attr>
+        <attr name="srcStart" format="reference"></attr>
+        <attr name="srcStorp" format="reference"></attr>
+        <attr name="circleWidth" format="integer"></attr>
+        <attr name="padding_circle" format="integer"></attr>
+
+    </declare-styleable>
+
+    <declare-styleable name="AudioPlayView">
+        <attr name="count" format="integer"></attr>
+        <attr name="tagWidth" format="integer"></attr>
+        <attr name="tagMaxHeight" format="integer"></attr>
+        <attr name="tagColor" format="color"></attr>
+        <attr name="space" format="integer"></attr>
+        <attr name="tagMinHeight" format="integer"></attr>
+    </declare-styleable>
+
+    <declare-styleable name="DragFlowLayout">
+        <attr name="itemSpace" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="PercentLayout_Layout">
+        <attr name="layout_widthPercent" format="string" />
+        <attr name="layout_heightPercent" format="string" />
+
+        <attr name="layout_marginPercent" format="string" />
+        <attr name="layout_marginLeftPercent" format="string" />
+        <attr name="layout_marginTopPercent" format="string" />
+        <attr name="layout_marginRightPercent" format="string" />
+        <attr name="layout_marginBottomPercent" format="string" />
+        <attr name="layout_marginStartPercent" format="string" />
+        <attr name="layout_marginEndPercent" format="string" />
+
+        <attr name="layout_textSizePercent" format="string" />
+
+        <attr name="layout_maxWidthPercent" format="string" />
+        <attr name="layout_maxHeightPercent" format="string" />
+        <attr name="layout_minWidthPercent" format="string" />
+        <attr name="layout_minHeightPercent" format="string" />
+
+        <attr name="layout_paddingPercent" format="string" />
+        <attr name="layout_paddingTopPercent" format="string" />
+        <attr name="layout_paddingBottomPercent" format="string" />
+        <attr name="layout_paddingLeftPercent" format="string" />
+        <attr name="layout_paddingRightPercent" format="string" />
+    </declare-styleable>
+</resources>

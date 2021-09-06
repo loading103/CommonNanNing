@@ -1,0 +1,697 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+    <!--智能刷新控件-->
+    <com.example.tomasyb.baselib.refresh.SmartRefreshLayout
+        android:id="@+id/refreshlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srlEnablePreviewInEditMode="false">
+
+        <!--头部-->
+        <com.example.tomasyb.baselib.refresh.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srlAccentColor="@color/main_gray"
+            app:srlClassicsSpinnerStyle="FixedBehind"
+            app:srlDrawableArrowSize="@dimen/dp_20"
+            app:srlDrawableMarginRight="@dimen/dp_20"
+            app:srlDrawableProgress="@drawable/ic_progress_puzzle"
+            app:srlDrawableProgressSize="@dimen/dp_20"
+            app:srlEnableLastTime="true"
+            app:srlFinishDuration="500"
+            app:srlTextSizeTime="10dp"
+            app:srlTextSizeTitle="@dimen/sp_16"
+            app:srlTextTimeMarginTop="@dimen/dp_2" />
+
+        <io.agora.yview.scrollview.JudgeNestedScrollView
+            android:id="@+id/scrollview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/index_top_viewpager"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp_200"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:id="@+id/tab_index_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/dp_30"
+                            android:layout_marginLeft="@dimen/dp_16"
+                            android:layout_marginRight="@dimen/dp_12"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_route_type_unseleted"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/index_iv_icon"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:scaleType="fitXY"
+                                android:layout_marginLeft="@dimen/dp_10"
+                                android:src="@mipmap/home_logo" />
+
+                            <View
+                                android:id="@+id/index_iv_line"
+                                android:layout_width="1dp"
+                                android:layout_height="@dimen/dp_20"
+                                android:layout_marginLeft="@dimen/dp_10"
+                                android:background="@color/line_gray" />
+
+                            <TextView
+                                android:id="@+id/index_et_search"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/dp_30"
+                                android:layout_weight="1"
+                                android:drawableLeft="@mipmap/home_icon_search"
+                                android:drawablePadding="@dimen/dp_5"
+                                android:gravity="center_vertical"
+                                android:hint="搜索景区、酒店、美食、攻略"
+                                android:imeOptions="actionSearch"
+                                android:maxLength="10"
+                                android:paddingLeft="@dimen/dp_12"
+                                android:singleLine="true"
+                                android:textColor="@color/main_black"
+                                android:textColorHint="@color/main_gray"
+                                android:textSize="@dimen/sp_13" />
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/index_iv_ar"
+                            android:layout_width="@dimen/dp_30"
+                            android:layout_height="@dimen/dp_30"
+                            android:layout_marginRight="@dimen/dp_16"
+                            android:background="@drawable/shap_ciecle"
+                            android:padding="@dimen/dp_8"
+                            android:src="@mipmap/home_scan_it"
+                           />
+                    </LinearLayout>
+
+                    <!--banner-->
+                    <io.agora.yview.banner.ConvenientBanner
+                        android:id="@+id/index_banner"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_155"
+                        android:layout_marginLeft="@dimen/dp_16"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_marginRight="@dimen/dp_16"
+                        app:autoTurningTime="8000"
+                        app:canLoop="true"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tab_index_title" />
+                </android.support.constraint.ConstraintLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <!--菜单-->
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/index_rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:layout_marginBottom="@dimen/dp_20" />
+
+
+                    <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_16"
+                        android:layout_marginRight="@dimen/dp_16"
+                        android:layout_marginBottom="@dimen/dp_24"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/img_trave"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_marginRight="@dimen/dp_5"
+                            android:scaleType="fitXY"
+                            android:src="@mipmap/home_smart_journey"
+                            app:layout_constraintDimensionRatio="311:270"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toLeftOf="@+id/ll"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintWidth_percent=".49" />
+
+                        <LinearLayout
+                            android:id="@+id/ll"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_marginLeft="@dimen/dp_5"
+                            android:orientation="vertical"
+                            app:layout_constraintDimensionRatio="311:270"
+                            app:layout_constraintLeft_toRightOf="@+id/img_trave"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintWidth_percent=".49">
+
+                            <ImageView
+                                android:id="@+id/img_robot"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginBottom="@dimen/dp_6"
+                                android:layout_weight="1"
+                                android:scaleType="fitXY"
+                                android:src="@mipmap/home_robot" />
+
+                            <ImageView
+                                android:id="@+id/img_guide"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginTop="@dimen/dp_6"
+                                android:layout_weight="1"
+                                android:scaleType="fitXY"
+                                android:src="@mipmap/home_guided_tour" />
+                        </LinearLayout>
+
+
+                    </android.support.constraint.ConstraintLayout>
+
+                    <include layout="@layout/include_space_10" />
+                    <!--虚拟体验-->
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/container_sceven"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_16"
+                        android:layout_marginTop="24dp">
+
+                        <TextView
+                            android:id="@+id/tv_xu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="720全景"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sp_19"
+                            android:textStyle="bold"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <LinearLayout
+                            android:id="@+id/img_more_scenen"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_xu"
+                            app:layout_constraintLeft_toRightOf="@+id/tv_xu"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tv_xu">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@mipmap/home_title_decoration" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="720 Panorama"
+                                    android:textColor="@color/text_gray"
+                                    android:textSize="@dimen/sp_11" />
+                            </LinearLayout>
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_13"
+                                android:layout_height="@dimen/dp_13"
+                                android:layout_marginRight="@dimen/dp_16"
+                                android:src="@mipmap/home_more" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_22"
+                            android:orientation="vertical"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_xu">
+
+                            <android.support.v7.widget.RecyclerView
+                                android:id="@+id/index_rv_seven"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/dp_24" />
+
+                            <include layout="@layout/include_space_10" />
+                        </LinearLayout>
+                    </android.support.constraint.ConstraintLayout>
+
+                    <!--热门推荐-->
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/container_hot"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_24"
+                        android:layout_marginBottom="@dimen/dp_24">
+
+                        <TextView
+                            android:id="@+id/tv_tui"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_16"
+                            android:text="热门推荐"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sp_19"
+                            android:textStyle="bold"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <LinearLayout
+                            android:id="@+id/img_more_hot"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_tui"
+                            app:layout_constraintLeft_toRightOf="@+id/tv_tui"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tv_tui">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@mipmap/home_title_decoration" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Popular Recommendation"
+                                    android:textColor="@color/text_gray"
+                                    android:textSize="@dimen/sp_11" />
+                            </LinearLayout>
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_13"
+                                android:layout_height="@dimen/dp_13"
+                                android:layout_marginRight="@dimen/dp_16"
+                                android:src="@mipmap/home_more" />
+                        </LinearLayout>
+
+                        <io.agora.yview.tablayout.SlidingTabLayout
+                            android:id="@+id/slid_tab"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/dp_48"
+                            android:layout_marginRight="@dimen/dp_16"
+                            android:background="@color/white"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_tui"
+                            app:tl_indicator_color="@color/main_default"
+                            app:tl_indicator_width="@dimen/sp_15"
+                            app:tl_textBold="SELECT"
+                            app:tl_textSelectColor="@color/black"
+                            app:tl_textUnselectColor="@color/text_gray"
+                            app:tl_textsize="@dimen/sp_14" />
+
+                        <com.example.tomasyb.baselib.widget.viewpager.NoScrollViewPager
+                            android:id="@+id/index_viewpager"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/dp_140"
+                            android:layout_marginTop="@dimen/dp_16"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/slid_tab" />
+                    </android.support.constraint.ConstraintLayout>
+
+                    <include layout="@layout/include_space_10" />
+                    <!--游记攻略-->
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/container_gong"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp">
+
+                        <TextView
+                            android:id="@+id/tv_gong"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_16"
+                            android:text="游记攻略"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sp_19"
+                            android:textStyle="bold"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <LinearLayout
+                            android:id="@+id/img_more_gong"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_gong"
+                            app:layout_constraintLeft_toRightOf="@+id/tv_gong"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tv_gong">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@mipmap/home_title_decoration" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Travel Guide"
+                                    android:textColor="@color/text_gray"
+                                    android:textSize="@dimen/sp_11" />
+                            </LinearLayout>
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_13"
+                                android:layout_height="@dimen/dp_13"
+                                android:layout_marginRight="@dimen/dp_16"
+                                android:src="@mipmap/home_more" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_22"
+                            android:orientation="vertical"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_gong">
+
+                            <android.support.v7.widget.RecyclerView
+                                android:id="@+id/ingdex_travel_rv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dp_16"
+                                android:layout_marginBottom="@dimen/dp_24" />
+
+                            <include layout="@layout/include_space_10" />
+                        </LinearLayout>
+
+                    </android.support.constraint.ConstraintLayout>
+
+
+                    <!--乡村旅游区-->
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/container_xiang"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_24"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/tv_rural"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_16"
+                            android:text="乡村旅游区"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sp_19"
+                            android:textStyle="bold"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <LinearLayout
+                            android:id="@+id/img_more_rural"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_rural"
+                            app:layout_constraintLeft_toRightOf="@+id/tv_rural"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tv_rural">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@mipmap/home_title_decoration" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Rural Tourist Area"
+                                    android:textColor="@color/text_gray"
+                                    android:textSize="@dimen/sp_11" />
+                            </LinearLayout>
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_13"
+                                android:layout_height="@dimen/dp_13"
+                                android:layout_marginRight="@dimen/dp_16"
+                                android:src="@mipmap/home_more" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_22"
+                            android:orientation="vertical"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_rural">
+
+                            <android.support.v7.widget.RecyclerView
+                                android:id="@+id/ingdex_rural_rv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dp_16"
+                                android:layout_marginBottom="@dimen/dp_24" />
+
+                            <include layout="@layout/include_space_10" />
+                        </LinearLayout>
+
+                    </android.support.constraint.ConstraintLayout>
+
+
+                    <!--星级龙家乐-->
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/container_famer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_24"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/tv_famer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_16"
+                            android:text="星级农家乐"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sp_19"
+                            android:textStyle="bold"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <LinearLayout
+                            android:id="@+id/img_more_famer"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_famer"
+                            app:layout_constraintLeft_toRightOf="@+id/tv_famer"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tv_famer">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@mipmap/home_title_decoration" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Star Farmhouse"
+                                    android:textColor="@color/text_gray"
+                                    android:textSize="@dimen/sp_11" />
+                            </LinearLayout>
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_13"
+                                android:layout_height="@dimen/dp_13"
+                                android:layout_marginRight="@dimen/dp_16"
+                                android:src="@mipmap/home_more" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_22"
+                            android:orientation="vertical"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_famer">
+
+                            <android.support.v7.widget.RecyclerView
+                                android:id="@+id/ingdex_famer_rv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dp_16"
+                                android:layout_marginBottom="@dimen/dp_24" />
+
+                            <include layout="@layout/include_space_10" />
+                        </LinearLayout>
+
+                    </android.support.constraint.ConstraintLayout>
+
+                    <!--节庆活动-->
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/container_activity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_24"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/tv_activity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_16"
+                            android:text="@string/activityTitle"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sp_19"
+                            android:textStyle="bold"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <LinearLayout
+                            android:id="@+id/img_more_activity"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_activity"
+                            app:layout_constraintLeft_toRightOf="@+id/tv_activity"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tv_activity">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@mipmap/home_title_decoration" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/activityInfo"
+                                    android:textColor="@color/text_gray"
+                                    android:textSize="@dimen/sp_11" />
+                            </LinearLayout>
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_13"
+                                android:layout_height="@dimen/dp_13"
+                                android:layout_marginRight="@dimen/dp_16"
+                                android:src="@mipmap/home_more" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_22"
+                            android:orientation="vertical"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_activity">
+
+                            <android.support.v7.widget.RecyclerView
+                                android:id="@+id/ingdex_activity_rv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dp_16"
+                                android:layout_marginRight="@dimen/dp_16"
+                                android:layout_marginBottom="@dimen/dp_24" />
+
+                            <include layout="@layout/include_space_10" />
+                        </LinearLayout>
+
+
+                    </android.support.constraint.ConstraintLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </io.agora.yview.scrollview.JudgeNestedScrollView>
+    </com.example.tomasyb.baselib.refresh.SmartRefreshLayout>
+
+</LinearLayout>

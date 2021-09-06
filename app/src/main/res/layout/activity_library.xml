@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context="com.daqsoft.commonnanning.ui.book.LibraryActivity">
+    <com.example.tomasyb.baselib.widget.HeadView
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <!--智能刷新控件-->
+    <com.example.tomasyb.baselib.refresh.SmartRefreshLayout
+        android:id="@+id/refreshlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srlEnablePreviewInEditMode="false">
+        <!--头部-->
+        <com.example.tomasyb.baselib.refresh.header.ClassicsHeader
+            app:srlAccentColor="@color/main_gray"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srlFinishDuration="500"
+            app:srlEnableLastTime="true"
+            app:srlClassicsSpinnerStyle="FixedBehind"
+            app:srlTextSizeTitle="@dimen/sp_16"
+            app:srlTextSizeTime="@dimen/dp_10"
+            app:srlTextTimeMarginTop="@dimen/dp_2"
+            app:srlDrawableArrowSize="@dimen/dp_20"
+            app:srlDrawableProgressSize="@dimen/dp_20"
+            app:srlDrawableMarginRight="@dimen/dp_20"
+            app:srlDrawableProgress="@drawable/ic_progress_puzzle"/>
+        <ViewAnimator
+            android:id="@+id/pan_va"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/mpanlist_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+            <include layout="@layout/include_noda"/>
+        </ViewAnimator>
+    </com.example.tomasyb.baselib.refresh.SmartRefreshLayout>
+</LinearLayout>

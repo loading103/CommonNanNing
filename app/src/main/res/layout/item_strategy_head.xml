@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:paddingLeft="@dimen/dp_10"
+    android:paddingRight="@dimen/dp_10"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <ImageView
+        android:id="@+id/strategy_details_img"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop" />
+    <TextView
+        android:layout_marginTop="@dimen/dp_10"
+        android:id="@+id/strategy_details_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/main_black"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_marginBottom="@dimen/dp_10"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/strategy_details_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2018-01-24"
+            android:textColor="@color/txt_black_gray"
+            android:textSize="@dimen/sp_12" />
+
+        <TextView
+            android:id="@+id/strategy_details_give"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:text="3864点赞"
+            android:textColor="@color/txt_black_gray"
+            android:textSize="@dimen/sp_12" />
+
+        <View
+            android:layout_width="@dimen/dp_3"
+            android:layout_height="@dimen/dp_3"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:background="@drawable/shape_bg_gray" />
+
+        <TextView
+            android:id="@+id/strategy_details_collect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.3W收藏"
+            android:textColor="@color/txt_black_gray"
+            android:textSize="@dimen/sp_12" />
+
+        <View
+            android:layout_width="@dimen/dp_3"
+            android:layout_height="@dimen/dp_3"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:background="@drawable/shape_bg_gray" />
+
+        <TextView
+            android:id="@+id/strategy_details_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="235评论"
+            android:textColor="@color/txt_black_gray"
+            android:textSize="@dimen/sp_12" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <io.agora.yview.img.CircleImageView
+            android:id="@+id/strategy_details_icon"
+            android:layout_width="@dimen/dp_35"
+            android:layout_height="@dimen/dp_35" />
+
+        <TextView
+            android:id="@+id/strategy_details_username"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_8"
+            android:layout_weight="1"
+            android:text=""
+            android:textColor="@color/main_black"
+            android:textSize="@dimen/sp_13" />
+
+        <TextView
+            android:id="@+id/strategy_details_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/home_icon_adress"
+            android:drawablePadding="@dimen/dp_6"
+            android:text="--"
+            android:textColor="@color/txt_black_gray"
+            android:textSize="@dimen/sp_13" />
+    </LinearLayout>
+
+    <include layout="@layout/include_space_10" />
+</LinearLayout>

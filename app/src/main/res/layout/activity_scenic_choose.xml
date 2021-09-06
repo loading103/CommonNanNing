@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.example.tomasyb.baselib.widget.HeadView
+        android:id="@+id/mHeadView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/mSearchLl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_8"
+        android:layout_marginRight="@dimen/dp_16"
+        android:layout_marginBottom="@dimen/dp_8"
+        android:background="@drawable/shape_guide_search"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/mConditionLl"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mHeadView">
+
+        <EditText
+            android:id="@+id/mSearchEt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_4"
+            android:background="@null"
+            android:drawableLeft="@mipmap/destination_search"
+            android:drawablePadding="@dimen/dp_10"
+            android:hint="搜索"
+            android:imeOptions="actionSearch"
+            android:padding="@dimen/dp_5"
+            android:singleLine="true"
+            android:textColor="@color/main_gray"
+            android:textSize="@dimen/sp_14" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/mConditionLl"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_44"
+        android:layout_marginTop="@dimen/dp_8"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mSearchLl">
+
+        <com.daqsoft.commonnanning.view.CenterDrawableTextView
+            android:id="@+id/mLevelChooseTv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableRight="@mipmap/complaint_details_arrow_down_normal"
+            android:drawablePadding="@dimen/dp_4"
+            android:gravity="center"
+            android:text="景区等级"
+            android:textColor="@color/txt_black_gray"
+            android:textSize="@dimen/sp_14" />
+
+        <com.daqsoft.commonnanning.view.CenterDrawableTextView
+            android:id="@+id/mDistanceTv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableRight="@mipmap/complaint_details_arrow_down_normal"
+            android:drawablePadding="@dimen/dp_4"
+            android:gravity="center"
+            android:text="距离"
+            android:textColor="@color/txt_black_gray"
+            android:textSize="@dimen/sp_14" />
+    </LinearLayout>
+
+    <ViewAnimator
+        android:id="@+id/mViewAnimator"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/mNextTv"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mConditionLl">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/mScenicRv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            tools:itemCount="1"
+            tools:listitem="@layout/item_scenic_choose" />
+
+        <include layout="@layout/include_noda" />
+    </ViewAnimator>
+
+
+    <TextView
+        android:id="@+id/mNextTv"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_48"
+        android:background="#ffffa800"
+        android:gravity="center"
+        android:text="已选 ,下一步"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_17"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+</android.support.constraint.ConstraintLayout>

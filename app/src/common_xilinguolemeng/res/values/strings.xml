@@ -1,0 +1,191 @@
+<resources>
+    <string name="app_name">一部手机游锡林郭勒</string>
+    <string-array name="mine_apply_name">
+        <item>我的订单</item>
+        <item>电子消费码</item>
+        <item>我的退款</item>
+        <item>收货地址</item>
+        <item>我的行程</item>
+        <item>我的投诉</item>
+        <item>在线留言</item>
+        <item>意见反馈</item>
+        <item>消息提醒</item>
+        <item>常用信息</item>
+        <item>我的足迹</item>
+    </string-array>
+    <string-array name="mine_apply_id">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+    </string-array>
+    <string-array name="main_page_index">
+        <item>首页</item>
+        <item>目的地</item>
+        <item>发现</item>
+        <item>服务</item>
+        <item>我的</item>
+    </string-array>
+    <string-array name="find_titles">
+        <item>节庆活动</item>
+        <item>资讯锡盟</item>
+        <item>最美锡盟</item>
+        <item>风味锡盟</item>
+        <item>物产锡盟</item>
+    </string-array>
+    <!--首页菜单名称集合-->
+    <string-array name="index_menu_name">
+        <item>景区</item>
+        <item>酒店</item>
+        <item>博物馆</item>
+        <item>图书馆</item>
+        <item>旅游产品</item>
+        <item>停车场</item>
+        <item>厕所</item>
+        <item>旅行社</item>
+        <item>天气</item>
+        <!-- <item>牧人之家</item>-->
+    </string-array>
+    <!--首页菜单标识集合-->
+    <string-array name="index_menu_type">
+        <item>scenic</item>
+        <item>hotel</item>
+        <item>museum</item>
+        <item>library</item>
+        <item>product</item>
+        <item>parking</item>
+        <item>toilet</item>
+        <item>travel</item>
+        <item>weather</item>
+        <!-- <item>shepherd</item>-->
+    </string-array>
+
+
+    <!--服务标题-->
+    <string-array name="server_menu_title">
+        <item>在线机器人</item>
+        <item>导游导览</item>
+        <item>智能行程</item>
+        <item>在线投诉</item>
+        <item>旅游资讯</item>
+        <item>交通指南</item>
+        <item>旅行社</item>
+        <item>超好玩</item>
+        <item>公交查询</item>
+        <item>火车查询</item>
+        <item>景区客流量</item>
+        <item>导游助手</item>
+    </string-array>
+    <!--服务描述-->
+    <string-array name="server_menu_info">
+        <item>Onliner robot</item>
+        <item>Guided tour</item>
+        <item>Smart journey</item>
+        <item>Online complaint</item>
+        <item>Travel information</item>
+        <item>Traffic guide</item>
+        <item>Travel agency</item>
+        <item>Super fun</item>
+        <item>Transit query</item>
+        <item>Train inquiry</item>
+        <item>Passenger flow</item>
+        <item>Guide assistant</item>
+    </string-array>
+    <!--服务内容-->
+    <string-array name="server_menu_content">
+        <item>有什么问题 先问问我吧</item>
+        <item>专业优质 智能导游</item>
+        <item>智能出行 一触即达</item>
+        <item>投诉有门 实时高效</item>
+        <item>最新资讯 一网打尽</item>
+        <item>最新信息 及时掌握</item>
+        <item>随心出发 欢乐有趣</item>
+        <item>各类活动 别样精彩</item>
+        <item>公交信息 实时准确</item>
+        <item>车票信息 一手掌握</item>
+        <item>实时客流 随心出行</item>
+        <item>优质导游 方便快捷</item>
+    </string-array>
+    <!--服务标题颜色-->
+    <array name="server_title_color">
+        <item>#ff9405</item>
+        <item>#50a41e</item>
+        <item>#09ba07</item>
+        <item>#03a8cf</item>
+        <item>#877dce</item>
+        <item>#f36e4a</item>
+        <item>#ca7d22</item>
+        <item>#1fa6a7</item>
+        <item>#a79807</item>
+        <item>#09ba07</item>
+        <item>#877dce</item>
+        <item>#f36e4a</item>
+    </array>
+    <!--服务描述颜色-->
+    <array name="server_info_color">
+        <item>#fcdb84</item>
+        <item>#9bc97f</item>
+        <item>#a3e6a2</item>
+        <item>#90d5e5</item>
+        <item>#bab4e3</item>
+        <item>#f36e4a</item>
+        <item>#e2b988</item>
+        <item>#83cccd</item>
+        <item>#d4c856</item>
+        <item>#a3e6a2</item>
+        <item>#bab4e3</item>
+        <item>#f9b9a9</item>
+    </array>
+    <!--服务背景颜色-->
+    <array name="server_bg_img">
+        <item>@mipmap/service_robot_bg</item>
+        <item>@mipmap/service_guided_bg</item>
+        <item>@mipmap/service_stroke_bg</item>
+        <item>@mipmap/service_complaint_bg</item>
+        <item>@mipmap/service_news_bg</item>
+        <item>@mipmap/service_traffic_bg</item>
+        <item>@mipmap/service_travel_agency_bg</item>
+        <item>@mipmap/super_fun_bg</item>
+        <item>@mipmap/transit_query_bg</item>
+        <item>@mipmap/train_inquiry_bg</item>
+        <item>@mipmap/passenger_flow_bg</item>
+        <item>@mipmap/guide_assistant_bg</item>
+    </array>
+    <!--服务图标-->
+    <array name="server_icon">
+        <item>@mipmap/service_robot_pic</item>
+        <item>@mipmap/service_guided_pic</item>
+        <item>@mipmap/service_stroke_pic</item>
+        <item>@mipmap/service_complaint_pic</item>
+        <item>@mipmap/service_news_pic</item>
+        <item>@mipmap/service_traffic_pic</item>
+        <item>@mipmap/service_travel_agency_pic</item>
+        <item>@mipmap/super_fun_pic</item>
+        <item>@mipmap/transit_query_pic</item>
+        <item>@mipmap/train_inquiry_pic</item>
+        <item>@mipmap/passenger_flow_pic</item>
+        <item>@mipmap/guide_assistant_pic</item>
+    </array>
+    <!--服务类型标识-->
+    <string-array name="server_type">
+        <item>robot</item>
+        <item>guide</item>
+        <item>stroke</item>
+        <item>complaint</item>
+        <item>news</item>
+        <item>traffic</item>
+        <item>travelAgency</item>
+        <item>fun</item>
+        <item>bus</item>
+        <item>train</item>
+        <item>passengerFlow</item>
+        <item>guideQuery</item>
+    </string-array>
+</resources>

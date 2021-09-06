@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_item"
+    android:layout_width="151dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/dp_8">
+
+    <com.example.tomasyb.baselib.widget.img.RoundImageView
+        android:id="@+id/iv_item_img_des"
+        android:layout_width="151dp"
+        android:layout_height="113dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/comimg_fail_240_180"
+        app:corner_radius="1dp"
+        app:type="round" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_gray_rectangle_line"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp_16"
+        android:paddingRight="@dimen/dp_16">
+
+        <TextView
+            android:id="@+id/tv_item_name_des"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="sdfdsdfsdsfdfsdfdfsdf"
+            android:textColor="@color/main_black"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/tv_item_score_des"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_12"
+            android:text="4.9分"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/sp_13" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

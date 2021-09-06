@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_dialog_style"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="离线下载"
+            android:textColor="#0D0D0D"
+            android:textSize="@dimen/sp_18" />
+
+        <ImageView
+            android:id="@+id/iv_guide_dialog_offline_down_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_10"
+            android:src="@mipmap/guide_close" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:gravity="center"
+        android:text="建议您在wifi网络环境下下载离线包"
+        android:textColor="#CDCDCD"
+        android:textSize="@dimen/sp_12" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:background="#ebebeb" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/voice_down_ll"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="语音离线包"
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/sp_16" />
+
+                <com.daqsoft.view.TaskDownLoadView
+                    android:id="@+id/voiceDownLoad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    app:circleWidth="8"
+                    app:padding_circle="18"
+                    app:progressCricleColor="#00D0AE"
+                    app:srcStart="@mipmap/guide_pop_download"
+                    app:srcStorp="@mipmap/guide_pop_pause"
+                    app:startCricleColor="#EEEEEE" />
+
+                <TextView
+                    android:id="@+id/txt_audioFinish"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="下载"
+                    android:textColor="@color/main"
+                    android:textSize="@dimen/sp_13"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="手绘地图"
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/sp_16" />
+
+                <com.daqsoft.view.TaskDownLoadView
+                    android:id="@+id/customer_map"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    app:circleWidth="8"
+                    app:padding_circle="18"
+                    app:progressCricleColor="#00D0AE"
+                    app:srcStart="@mipmap/guide_pop_download"
+                    app:srcStorp="@mipmap/guide_pop_pause"
+                    app:startCricleColor="#EEEEEE" />
+
+                <TextView
+                    android:id="@+id/txt_mapFinish"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="下载"
+                    android:textColor="@color/main"
+                    android:textSize="@dimen/sp_13"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:id="@+id/tv_busnum"
+        android:drawableLeft="@mipmap/businquiry_result_bus"
+        android:drawablePadding="5dp"
+        android:padding="5dp"
+        android:background="@drawable/shape_robot_type_gray_bg"
+        android:text="54路"
+        android:textColor="@color/b_main_black"
+        android:textSize="13sp"
+        android:layout_width="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/img_more"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:id="@+id/img_more"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_busnum"
+        app:layout_constraintTop_toTopOf="@+id/tv_busnum"
+        app:layout_constraintLeft_toRightOf="@+id/tv_busnum"
+        app:layout_constraintRight_toRightOf="parent"
+        android:src="@mipmap/businquiry_result_icon_triangle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</android.support.constraint.ConstraintLayout>

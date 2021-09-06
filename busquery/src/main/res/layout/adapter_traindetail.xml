@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp">
+
+
+        <TextView
+            android:id="@+id/txt_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="01"
+            android:textColor="#333333"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/txt_from"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="成都东"
+            android:textColor="#333333"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/txt_Time1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="08：22"
+            android:textColor="#333333"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/txt_Time2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="18：44"
+            android:textColor="#333333"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/txt_Time3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="30分钟"
+            android:textColor="#333333"
+            android:textSize="12dp" />
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

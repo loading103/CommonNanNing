@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="280dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/shap_dialog_center">
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textColor="@color/main_black"
+        android:textSize="18sp"
+        android:text="一键报警"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:id="@+id/ll_phone"
+        android:layout_marginTop="@dimen/dp_16"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:textSize="15sp"
+            android:textColor="@color/main_gray"
+            android:text="是否拨打紧急电话:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginLeft="@dimen/dp_10"
+            android:textSize="15sp"
+            android:textColor="@color/red"
+            android:text="13778"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <View
+        android:id="@+id/line_h"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/ll_phone"
+        android:background="@color/gray_line"
+        android:layout_width="0dp"
+        android:layout_height="1dp"/>
+    <TextView
+        app:layout_constraintTop_toBottomOf="@+id/line_h"
+        android:id="@+id/tv_gophone"
+        app:layout_constraintRight_toLeftOf="@+id/line_ver"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:gravity="center"
+        android:text="拨打"
+        android:textColor="@color/main_default"
+        android:textSize="18sp"
+        android:layout_width="0dp"
+        android:layout_height="50dp" />
+    <View
+        app:layout_constraintTop_toTopOf="@+id/tv_gophone"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_gophone"
+        android:id="@+id/line_ver"
+        app:layout_constraintLeft_toRightOf="@+id/tv_gophone"
+        app:layout_constraintRight_toLeftOf="@+id/tv_cancle"
+        app:layout_constraintTop_toBottomOf="@+id/ll_phone"
+        android:background="@color/gray_line"
+        android:layout_width="1dp"
+        android:layout_height="0dp"/>
+
+    <TextView
+        app:layout_constraintTop_toTopOf="@+id/tv_gophone"
+        android:id="@+id/tv_cancle"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/line_ver"
+        android:gravity="center"
+        android:text="取消"
+        android:textColor="@color/main_black"
+        android:textSize="18sp"
+        android:layout_width="0dp"
+        android:layout_height="50dp" />
+</android.support.constraint.ConstraintLayout>

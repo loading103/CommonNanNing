@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dp_20">
+
+    <com.example.tomasyb.baselib.widget.img.RoundImageView
+        android:id="@+id/mCoverIv"
+        android:layout_width="124dp"
+        android:layout_height="@dimen/dp_90"
+        android:scaleType="fitXY"
+        app:corner_radius="3dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:type="round" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/mCoverIv"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/mTitleTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/main_black"
+            android:textSize="15sp"
+            tools:text="打造诗意泸沽湖 创摩梭新家园" />
+
+        <TextView
+            android:id="@+id/mIntroTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textSize="13sp"
+            tools:text="中央和省委省政府高度重视加快民族地区现代化发展、推动社会fsdfsf" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/mTimeTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/home_view"
+                android:drawablePadding="@dimen/dp_4"
+                android:textColor="@color/txt_gray"
+                android:textSize="@dimen/sp_12"
+                tools:text="2018-01-24" />
+
+            <TextView
+                android:id="@+id/mViewTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:drawableLeft="@mipmap/home_time"
+                android:drawablePadding="@dimen/dp_4"
+                android:textColor="@color/txt_gray"
+                android:textSize="@dimen/sp_12"
+                tools:text="2379" />
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

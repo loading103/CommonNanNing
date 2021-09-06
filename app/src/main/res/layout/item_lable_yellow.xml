@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lable"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginRight="@dimen/dp_8"
+    android:background="@drawable/shape_yellow_rectangle"
+
+    android:paddingBottom="@dimen/dp_1"
+    android:paddingLeft="@dimen/dp_3"
+    android:paddingRight="@dimen/dp_3"
+    android:paddingTop="@dimen/dp_1"
+    android:text="风味小吃"
+    android:textColor="@color/text_lable_yellow"
+    android:textSize="@dimen/sp_11" />

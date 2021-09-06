@@ -1,0 +1,16 @@
+<resources>
+    <string name="mine_route_no_data_content">你还没有创建过行程哦，点击下方按钮\n开始创建行程吧</string>
+    <string name="value_1">-1</string>
+    <string name="no_address">未能获取当前位置，请开启定位</string>
+    <string name="no_map_navi">数据异常，无法进行导航操作</string>
+    <string name="txt_voice_recoding">录制中，上滑取消</string>
+    <string name="txt_address">地址</string>
+    <string name="txt_phone">电话</string>
+    <string name="no_more">—    没有更多了    —</string>
+    <string name="travel_info">旅行社介绍</string>
+    <string name="activityTitle">节庆活动</string>
+    <string name="activityInfo">Rural Tourist Area</string>
+    <string name="not_yet_open">暂未开放</string>
+    <string name="filter_name">不限</string>
+
+</resources>

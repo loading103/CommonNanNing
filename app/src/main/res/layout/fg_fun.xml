@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_white"
+    android:orientation="vertical">
+
+    <com.example.tomasyb.baselib.widget.HeadView
+        android:id="@+id/fun_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <!--智能刷新控件-->
+    <com.example.tomasyb.baselib.refresh.SmartRefreshLayout
+        android:id="@+id/refreshlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srlEnablePreviewInEditMode="false">
+        <!--头部-->
+        <com.example.tomasyb.baselib.refresh.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srlAccentColor="@color/main_gray"
+            app:srlClassicsSpinnerStyle="FixedBehind"
+            app:srlDrawableArrowSize="20dp"
+            app:srlDrawableMarginRight="20dp"
+            app:srlDrawableProgress="@drawable/ic_progress_puzzle"
+            app:srlDrawableProgressSize="20dp"
+            app:srlEnableLastTime="true"
+            app:srlFinishDuration="500"
+            app:srlTextSizeTime="10dp"
+            app:srlTextSizeTitle="16sp"
+            app:srlTextTimeMarginTop="2dp" />
+
+        <io.agora.yview.scrollview.JudgeNestedScrollView
+            android:id="@+id/scrollview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <!--banner-->
+                <io.agora.yview.banner.ConvenientBanner
+                    android:id="@+id/index_banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    app:autoTurningTime="3000"
+                    app:canLoop="true" />
+
+                <LinearLayout
+                    android:id="@+id/fun_panorama_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_16"
+                        android:paddingBottom="20dp"
+                        android:paddingTop="20dp"
+                        android:text="推荐全景"
+                        android:textColor="@color/main_black"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/fun_rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"/>
+
+                    <include layout="@layout/include_space_10" />
+                </LinearLayout>
+                <!--推荐景点-->
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/fun_best_scenic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_16"
+                        android:paddingBottom="20dp"
+                        android:paddingTop="20dp"
+                        android:text="推荐景点"
+                        android:textColor="@color/main_black"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/fun_rv_best_scenic"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"/>
+                    <View
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="@dimen/dp_16"
+                        android:layout_marginLeft="@dimen/dp_16"
+                        android:background="@color/line_gray"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"/>
+                    <TextView
+                        android:id="@+id/tv_best_scenic"
+                        android:gravity="center"
+                        android:textColor="@color/main_black"
+                        android:textSize="14sp"
+                        android:text="+  查看更多  +"
+                        android:padding="15dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <include layout="@layout/include_space_10" />
+                </LinearLayout>
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/fun_line_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="12dp"
+                        android:layout_marginLeft="@dimen/dp_16"
+                        android:text="推荐线路"
+                        android:textColor="@color/main_black"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                    <android.support.v7.widget.RecyclerView
+                        android:layout_marginLeft="@dimen/dp_16"
+                        android:layout_marginRight="@dimen/dp_16"
+                        android:id="@+id/fun_rv_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <include layout="@layout/include_space_10" />
+                </LinearLayout>
+                <!--节庆活动-->
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/fun_activity_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="@dimen/dp_16"
+                        android:text="节庆活动"
+                        android:textColor="@color/main_black"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                    <android.support.v7.widget.RecyclerView
+                        android:layout_marginLeft="@dimen/dp_16"
+                        android:layout_marginRight="@dimen/dp_16"
+                        android:id="@+id/fun_rv_activity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                <!--游记攻略同节庆活动模式-->
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/fun_ll_gongl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="@dimen/dp_16"
+                        android:text="游记攻略"
+                        android:textColor="@color/main_black"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                    <android.support.v7.widget.RecyclerView
+                        android:layout_marginLeft="@dimen/dp_16"
+                        android:layout_marginRight="@dimen/dp_16"
+                        android:id="@+id/fun_rv_gongl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </io.agora.yview.scrollview.JudgeNestedScrollView>
+    </com.example.tomasyb.baselib.refresh.SmartRefreshLayout>
+
+</LinearLayout>

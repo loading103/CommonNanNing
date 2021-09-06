@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.example.tomasyb.baselib.widget.HeadView
+            android:id="@+id/headView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <io.agora.yview.view.CenterDrawableEdittext
+            android:id="@+id/edt_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_8"
+            android:layout_marginRight="@dimen/dp_16"
+            android:layout_marginBottom="@dimen/dp_16"
+            android:background="@drawable/shape_guide_search"
+            android:drawableLeft="@mipmap/destination_search"
+            android:drawablePadding="@dimen/dp_10"
+            android:hint="请输入导游姓名或导游证号查询"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:maxLines="1"
+            android:padding="@dimen/dp_10"
+            android:singleLine="true"
+            android:textColor="@color/main_gray"
+            android:textSize="@dimen/sp_14" />
+
+        <LinearLayout
+            android:id="@+id/ll_choose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.daqsoft.commonnanning.view.CenterDrawableTextView
+                android:id="@+id/guide_choose_region"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_40"
+                android:layout_weight="1"
+                android:drawableRight="@drawable/selected_scenic_filter_arrow"
+                android:drawablePadding="@dimen/dp_3"
+                android:ellipsize="middle"
+                android:singleLine="true"
+                android:text="地区选择"
+                android:textColor="@drawable/selector_txt_color_main_gray"
+                android:textSize="@dimen/sp_15" />
+
+            <com.daqsoft.commonnanning.view.CenterDrawableTextView
+                android:id="@+id/guide_choose_level"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_40"
+                android:layout_weight="1"
+                android:drawableRight="@drawable/selected_scenic_filter_arrow"
+                android:drawablePadding="@dimen/dp_3"
+                android:ellipsize="middle"
+                android:singleLine="true"
+                android:text="导游等级"
+                android:textColor="@drawable/selector_txt_color_main_gray"
+                android:textSize="@dimen/sp_15" />
+        </LinearLayout>
+
+        <include layout="@layout/include_line_one" />
+
+        <!--智能刷新控件-->
+        <com.example.tomasyb.baselib.refresh.SmartRefreshLayout
+            android:id="@+id/refreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:layout_marginRight="@dimen/dp_16"
+            app:srlEnablePreviewInEditMode="false">
+            <!--头部-->
+            <com.example.tomasyb.baselib.refresh.header.ClassicsHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srlAccentColor="@color/main_gray"
+                app:srlClassicsSpinnerStyle="FixedBehind"
+                app:srlDrawableArrowSize="@dimen/dp_20"
+                app:srlDrawableMarginRight="@dimen/dp_20"
+                app:srlDrawableProgress="@drawable/ic_progress_puzzle"
+                app:srlDrawableProgressSize="@dimen/dp_20"
+                app:srlEnableLastTime="true"
+                app:srlFinishDuration="500"
+                app:srlTextSizeTime="@dimen/dp_10"
+                app:srlTextSizeTitle="@dimen/sp_16"
+                app:srlTextTimeMarginTop="@dimen/dp_2" />
+
+            <ViewAnimator
+                android:id="@+id/guide_animator"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="none" />
+
+                <include
+                    layout="@layout/include_noda"
+                    android:visibility="gone" />
+            </ViewAnimator>
+        </com.example.tomasyb.baselib.refresh.SmartRefreshLayout>
+    </LinearLayout>
+
+</FrameLayout>

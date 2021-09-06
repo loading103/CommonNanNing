@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dp_16">
+
+    <ImageView
+        android:id="@+id/mCoverIv"
+        android:layout_width="0dp"
+        android:scaleType="fitXY"
+        android:layout_height="@dimen/dp_82"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/mSelectedIv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_scenic_choose"
+        app:layout_constraintBottom_toBottomOf="@id/mCoverIv"
+        app:layout_constraintLeft_toLeftOf="@id/mCoverIv"
+        app:layout_constraintRight_toRightOf="@id/mCoverIv"
+        app:layout_constraintTop_toTopOf="@id/mCoverIv" />
+
+    <TextView
+        android:id="@+id/mLevelTv"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_12"
+        android:background="@drawable/shape_scenic_level"
+        android:gravity="center"
+        android:paddingLeft="@dimen/dp_3"
+        android:paddingRight="@dimen/dp_3"
+        android:textColor="#FFA800"
+        android:textSize="@dimen/sp_11"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mCoverIv"
+        tools:text="AAAAA" />
+
+    <TextView
+        android:id="@+id/mNameTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_8"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/main_black"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mLevelTv"
+        tools:text="天山大峡谷" />
+</android.support.constraint.ConstraintLayout>

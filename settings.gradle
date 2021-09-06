@@ -1,0 +1,2 @@
+include ':app', ':baselib', ':yview', ':yshare', ':scenicmodule', 'multi-image-selector', ':guidemodule',
+        ':xutils', ':playerview', ':ybmap', ':busquery'

@@ -1,0 +1,220 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+//apply plugin: 'kotlin-kapt'
+android {
+    compileSdkVersion 28
+    dataBinding {
+        enabled = true
+    }
+    defaultConfig {
+        applicationId "com.daqsoft.commonnanning"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        // arouter配置
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+        ndk {
+            abiFilters "armeabi-v7a"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    signingConfigs {
+        /**
+         * 19163734420
+         * 南宁 commonnanning
+         * 铜川F:\DaqsoftGithub\CommonNanNing\app\commontongchuan.jks
+         * 锡林郭勒盟 F:\DaqsoftGithub\CommonNanNing\app\commonxlglm.jks
+         * 锡林郭勒盟 F:\DaqsoftGithub\CommonNanNing\app\commonjx.jks
+         */
+//        debug {
+//            storeFile file("commonxlglm.jks")
+//            storePassword "daqsoft"
+//            keyAlias "daqsoft"
+//            keyPassword "daqsoft"
+//        }
+//        release {
+//            storeFile file("commonxlglm.jks")
+//            storePassword "daqsoft"
+//            keyAlias "daqsoft"
+//            keyPassword "daqsoft"
+//        }
+        debug {
+            storeFile file("xizangkey.jks")
+            storePassword "daqsoft"
+            keyAlias "daqisoft"
+            keyPassword "daqsoft"
+        }
+        release {
+            storeFile file("xizangkey.jks")
+            storePassword "daqsoft"
+            keyAlias "daqisoft"
+            keyPassword "daqsoft"
+        }
+    }
+
+    packagingOptions {
+        exclude 'assets/lineDashTexture.png'
+    }
+    /**
+     * 区分不同项目
+     */
+    flavorDimensions "default"
+    productFlavors {
+        // 南宁
+        common_nanning {
+            dimension "default"
+            applicationId "com.daqsoft.common.nanning"
+            versionCode 25
+            versionName "1.2.5"
+            // 清单文件的配置 地图key ,contentProvider配置参数
+            manifestPlaceholders = [AMAP        : "d0023f953ae63f6476c48d8d709e20da",
+                                    AUTHORITIED : "com.daqsoft.common.nanning.fileprovider",
+                                    UMENGAPPKEY : "5d35830e3fc1955203000958",
+                                    UMENGCHANNEL: "nanning"]
+        }
+        // 铜川
+        common_tongchuan {
+            dimension "default"
+            applicationId "com.daqsoft.common.tongchuan"
+            versionCode 1
+            versionName "1.0.1"
+            // 清单文件的配置 地图key ,contentProvider配置参数
+            manifestPlaceholders = [AMAP        : "a691074a23649773112b2ed0172330df",
+                                    AUTHORITIED : "com.daqsoft.common.tongchuan.fileprovider",
+                                    UMENGAPPKEY : "",
+                                    UMENGCHANNEL: "tongchuan"]
+        }
+        /**
+         * 锡林郭勒盟
+         * 注意本项目用到AR  需要在下面解放依赖
+         */
+        common_xilinguolemeng {
+            dimension "default"
+            applicationId "com.daqsoft.common.xlglm"
+            versionCode 4
+            versionName "1.0.4"
+            // 清单文件的配置 地图key ,contentProvider配置参数
+            manifestPlaceholders = [AMAP        : "217d4ec4f38b56fc96279c2769db3d82",
+                                    AUTHORITIED : "com.daqsoft.common.xlglm.fileprovider",
+                                    UMENGAPPKEY : "5d3579e84ca35787cc000e6e",
+                                    UMENGCHANNEL: "xlglm"]
+        }
+        // 博乐
+        common_bole {
+            dimension "default"
+            applicationId "com.daqsoft.common.bole"
+            versionCode 3
+            versionName "1.0.3"
+            // 清单文件的配置 地图key ,contentProvider配置参数
+            manifestPlaceholders = [AMAP        : "4682bedc4297ada34c0bda0d188d93b4",
+                                    AUTHORITIED : "com.daqsoft.common.bole.fileprovider",
+                                    UMENGAPPKEY : "5d3579e84ca35787cc000e6e",
+                                    UMENGCHANNEL: "bole"]
+        }
+
+        /**
+         * 中国西藏旅游
+         *  MD5: 1A:59:16:72:4E:CF:E2:30:43:C1:E2:D6:B2:6F:22:B3
+         * SHA1: 12:1E:87:53:76:1A:E2:AD:5E:F3:7B:98:DB:D7:9D:6D:34:60:94:1E
+         * SHA256: 63:58:D9:C3:4F:43:3B:AE:35:76:B2:B0:43:B7:17:00:6C:1D:DD:46:E0:FC:87:D4:D0:33:48:BC:A8:02:D9:C1
+         */
+        common_zgxzly {
+            dimension "default"
+            applicationId "com.daqsoft.android.quanyu.xizang"
+            versionCode 2
+            versionName "1.1"
+            // 清单文件的配置 地图key ,contentProvider配置参数
+            manifestPlaceholders = [AMAP        : "d1f7aeb1d022d7b17b15643f3487c7e0",
+                                    AUTHORITIED : "com.daqsoft.android.quanyu.xizang.fileprovider",
+                                    UMENGAPPKEY : "5d3579e84ca35787cc000e6e",
+                                    UMENGCHANNEL: "zgxzlv"]
+        }
+        // 江西省
+        common_jiangxi {
+            dimension "default"
+            applicationId "com.daqsoft.common.jx"
+            versionCode 1
+            versionName "1.0.1"
+            // 清单文件的配置 地图key ,contentProvider配置参数
+            manifestPlaceholders = [AMAP        : "4609b62efb1a0d18f8ac91e36a4c6455",
+                                    AUTHORITIED : "com.daqsoft.common.jx.fileprovider",
+                                    UMENGAPPKEY : "5d818ced4ca357353500032b",
+                                    UMENGCHANNEL: "jiangxi"]
+        }
+    }
+    dexOptions {
+
+        javaMaxHeapSize "4g"
+    }
+    buildToolsVersion '28.0.3'
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+    mavenCentral()
+}
+
+dependencies {
+    implementation(name: 'ybbAuthlogin-1.0.5', ext: 'aar')
+    // 宝宝自己的sdk
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:' + rootProject.ext.butterknifeVersion
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':yview')
+    implementation 'com.alibaba:arouter-api:1.3.1'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    implementation project(':yshare')
+    // RecyclerView流式布局
+    implementation 'com.github.1002326270xc:LayoutManager-FlowLayout:v1.6'
+    // 地区选择器
+    implementation 'com.contrarywind:Android-PickerView:3.2.7'
+    implementation project(':multi-image-selector')
+    implementation project(':guidemodule')
+    implementation files('libs/Msc.jar')
+    implementation files('libs/Sunflower.jar')
+//    implementation files('libs/fastjson-1.1.38.jar')
+    implementation project(':playerview')
+    implementation project(':busquery')
+    implementation project(":ybmap")
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation project(':baselib')
+    // 仿魅族的卡片ViewPager
+    implementation 'com.github.pinguo-zhouwei:MZBannerView:v2.0.0'
+    implementation files('libs/AndroidScreenshot.jar')
+    // 加密和签名
+    implementation 'commons-codec:commons-codec:1.10'
+    /**
+     *  注意注意注意：下面是AR包，用到的工程才引用，至于那个用到看上面项目分支注解
+     *  开始
+     */
+    compile(name: 'videoconverter-release', ext: 'aar')
+    compile(name: 'VuforiaWrapper', ext: 'aar')
+    /**
+     *  AR引用结束
+     */
+}

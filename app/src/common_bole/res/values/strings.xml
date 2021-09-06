@@ -1,0 +1,79 @@
+<resources>
+    <string name="app_name">一部手机游博乐</string>
+    <!--南宁单独模块开始-->
+    <string-array name="mine_apply_name_nn">
+        <item>我的订单</item>
+        <item>我的行程</item>
+        <item>我的投诉</item>
+        <item>在线留言</item>
+        <item>意见反馈</item>
+    </string-array>
+    <string-array name="mine_apply_id_nn">
+        <item>1</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+
+    <string-array name="mine_apply_name">
+        <item>在线留言</item>
+        <item>意见反馈</item>
+        <item>我的投诉</item>
+        <item>旅游足迹</item>
+    </string-array>
+
+    <string-array name="mine_apply_id">
+<!--        <item>1</item>-->
+<!--        <item>2</item>-->
+<!--        <item>3</item>-->
+<!--        <item>4</item>-->
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+    <string-array name="main_page_index">
+        <item>首页</item>
+        <item>发现</item>
+        <item>服务</item>
+        <item>我的</item>
+    </string-array>
+    <string-array name="find_titles">
+        <item>节庆活动</item>
+        <item>资讯博乐</item>
+        <item>最美博乐</item>
+        <item>风味博乐</item>
+        <item>物产博乐</item>
+    </string-array>
+    <!--首页菜单名称集合-->
+    <string-array name="index_menu_name">
+        <item>停车场</item>
+        <item>厕所</item>
+        <item>天气</item>
+        <item>博物馆</item>
+        <item>图书馆</item>
+        <item>景区</item>
+        <item>酒店</item>
+        <item>旅行社</item>
+        <item>直通车</item>
+    </string-array>
+    <!--首页菜单标识集合-->
+    <string-array name="index_menu_type">
+        <item>parking</item>
+        <item>toilet</item>
+        <item>weather</item>
+        <item>museum</item>
+        <item>library</item>
+        <item>scenic</item>
+        <item>hotel</item>
+        <item>travel</item>
+        <item>train</item>
+    </string-array>
+    <string-array name="index_title">
+        <item>景区</item>
+        <item>酒店</item>
+        <item>民宿</item>
+    </string-array>
+
+</resources>

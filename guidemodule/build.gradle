@@ -1,0 +1,56 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    dataBinding {
+        enabled = true
+    }
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api 'com.android.support:appcompat-v7:' + rootProject.ext.supportLibVersion
+    api 'com.android.support:recyclerview-v7:' + rootProject.ext.supportLibVersion
+    api 'com.android.support:design:' + rootProject.ext.supportLibVersion
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    api project(':xutils')
+    api files('libs/universal-image-loader-1.9.3.jar')
+    api 'com.zhy:okhttputils:2.6.2'
+    api 'com.google.code.gson:gson:2.2.4'
+    //以下是自己加的图片请求框架
+    api 'com.facebook.fresco:fresco:1.8.1'
+    // 在 API < 14 上的机器支持 WebP 时，需要添加
+    api 'com.facebook.fresco:animated-base-support:0.12.0'
+    // 支持 GIF 动图，需要添加
+    api 'com.facebook.fresco:animated-gif:1.8.1'
+    // 支持 WebP （静态图+动图），需要添加
+    api 'com.facebook.fresco:animated-webp:1.8.1'
+    api 'com.facebook.fresco:webpsupport:1.8.1'
+    implementation project(":ybmap")
+//    implementation files('libs/AMap_Location_V4.4.0_20181122.jar')
+//    implementation files('libs/Android_Map3D_SDK_V6.5.0_20180930.jar')
+//    implementation files('libs/AMap_Search_V6.5.0_20180930.jar')
+    compileOnly 'org.jsoup:jsoup:1.10.1'
+}
+
+

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txt_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_guide_map_market"
+        android:gravity="center"
+        android:paddingBottom="@dimen/dp_6"
+        android:paddingLeft="@dimen/dp_12"
+        android:paddingRight="@dimen/dp_12"
+        android:paddingTop="@dimen/dp_6"
+        android:text="剑门关"
+        android:textColor="#a9883c"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:id="@+id/img_bitmap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp" />
+
+    <TextView
+        android:id="@+id/tv_line_number"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:background="@drawable/selector_line_map_bg"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="@color/orange"
+        android:textSize="@dimen/sp_10"
+        android:visibility="gone" />
+</LinearLayout>

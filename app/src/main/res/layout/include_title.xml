@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="58dp"
+    android:background="@android:color/white"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/include_title_ib_left"
+        android:layout_width="@dimen/dp_45"
+        android:onClick="onClick"
+        android:padding="@dimen/dp_15"
+        android:layout_gravity="center_vertical"
+        android:src="@mipmap/comm_titlebar_back_normal"
+        android:layout_height="@dimen/dp_45" />
+
+    <ImageButton
+        android:id="@+id/include_title_ib_left2"
+        android:layout_width="@dimen/dp_45"
+        android:onClick="onClick"
+        android:layout_height="@dimen/dp_45"
+        android:padding="10dp"
+        android:scaleType="fitXY"
+        android:visibility="gone"/>
+
+    <com.daqsoft.view.AlwaysMarqueeTextView
+        android:id="@+id/include_title_tv"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text=""
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/dp_18" />
+
+    <ImageButton
+        android:id="@+id/ib_collection"
+        android:layout_width="@dimen/dp_45"
+        android:onClick="onClick"
+        android:layout_height="@dimen/dp_45"
+        android:padding="10dp"
+        android:scaleType="fitXY"
+        android:visibility="gone"/>
+
+
+    <ImageButton
+        android:id="@+id/include_title_ib_right"
+        android:layout_width="50dp"
+        android:onClick="onClick"
+        android:layout_gravity="center_vertical"
+        android:visibility="invisible"
+        android:background="@null"
+        android:src="@mipmap/usercente_collectionr_class"
+        android:layout_height="50dp" />
+
+    <TextView
+        android:id="@+id/tv_title_right"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:textColor="@color/main"
+        android:gravity="center"
+        android:textSize="@dimen/sp_12"
+        android:padding="@dimen/dp_10"
+        android:visibility="gone"
+        android:text="新增"/>
+
+
+    <ViewAnimator
+        android:id="@+id/include_title_va_right"
+        android:layout_width="@dimen/dp_45"
+        android:layout_height="@dimen/dp_45"
+        android:visibility="gone">
+
+        <TextView
+            android:visibility="visible"
+            android:text="新增"
+            android:textColor="@color/main"
+            android:id="@+id/include_title_tv_right"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageButton
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </ViewAnimator>
+
+
+</LinearLayout>

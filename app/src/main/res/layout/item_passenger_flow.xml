@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_16"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_level"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:background="@drawable/shape_green_circle"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_15"
+            tools:text="1A" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/main_black"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                tools:text="避暑山庄" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/main_gray"
+                android:textSize="@dimen/sp_12"
+                tools:text="2019-06-12 14:00" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/bar_count"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_8"
+        android:layout_marginTop="@dimen/dp_16"
+        android:max="100"
+        android:progress="50"
+        android:progressDrawable="@drawable/passenger_flow_style_blue" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_12"
+        android:layout_marginBottom="@dimen/dp_16"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/passenger_flow_grade"
+            android:drawablePadding="@dimen/dp_4"
+            android:text="等级："
+            android:textColor="@color/main_gray"
+            android:textSize="@dimen/sp_12" />
+
+        <TextView
+            android:id="@+id/tv_grade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/main"
+            android:textSize="@dimen/sp_13"
+            android:textStyle="bold"
+            tools:text="5" />
+        <LinearLayout
+            android:id="@+id/ll_people"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_24"
+            android:drawableLeft="@mipmap/passenger_flow_people"
+            android:drawablePadding="@dimen/dp_4"
+            android:text="人流量："
+            android:textColor="@color/main_gray"
+            android:textSize="@dimen/sp_12" />
+
+        <TextView
+            android:id="@+id/tv_people"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/main"
+            android:textSize="@dimen/sp_13"
+            android:textStyle="bold"
+            tools:text="3.84万" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:drawableLeft="@mipmap/passenger_flow_comfortable"
+            android:drawablePadding="@dimen/dp_4"
+            android:text="舒适度："
+            android:textColor="@color/main_gray"
+            android:textSize="@dimen/sp_12" />
+
+        <TextView
+            android:id="@+id/tv_comfort"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/main"
+            android:textSize="@dimen/sp_13"
+            android:textStyle="bold"
+            tools:text="非常舒适" />
+    </LinearLayout>
+
+    <include layout="@layout/include_line_one" />
+
+</LinearLayout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:padding="10dp"
+        android:id="@+id/tv_minutes"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="55分钟"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/b_main_black"
+        android:textStyle="bold"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/tv_line"
+        android:layout_width="1dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:background="@color/b_main_gray"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_minutes"
+        app:layout_constraintLeft_toRightOf="@+id/tv_minutes"
+        app:layout_constraintTop_toTopOf="@+id/tv_minutes" />
+
+    <TextView
+        android:id="@+id/tv_distence"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="步行1.3公里"
+        android:textColor="@color/b_main_black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_minutes"
+        app:layout_constraintStart_toEndOf="@+id/tv_line"
+        app:layout_constraintTop_toTopOf="@+id/tv_minutes" />
+
+    <ImageView
+        android:id="@+id/img_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_minutes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_minutes"
+        app:srcCompat="@mipmap/guide_detail_arrow" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_bus"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_minutes" />
+
+    <TextView
+        android:id="@+id/tv_space_10"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/main_bg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rv_bus" />
+
+</android.support.constraint.ConstraintLayout>

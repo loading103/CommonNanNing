@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.example.tomasyb.baselib.widget.HeadView
+        android:id="@+id/head_destination"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <!--智能刷新控件-->
+    <com.example.tomasyb.baselib.refresh.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srlEnablePreviewInEditMode="false">
+        <!--头部-->
+        <com.example.tomasyb.baselib.refresh.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srlAccentColor="@color/main_gray"
+            app:srlClassicsSpinnerStyle="FixedBehind"
+            app:srlDrawableArrowSize="20dp"
+            app:srlDrawableMarginRight="20dp"
+            app:srlDrawableProgress="@drawable/ic_progress_puzzle"
+            app:srlDrawableProgressSize="20dp"
+            app:srlEnableLastTime="true"
+            app:srlFinishDuration="500"
+            app:srlTextSizeTime="10dp"
+            app:srlTextSizeTitle="16sp"
+            app:srlTextTimeMarginTop="2dp" />
+
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/scroll_tab_destination"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="271dp"
+                    android:background="@color/gray_line">
+                    <!-- banner图 -->
+                    <ImageView
+                        android:id="@+id/iv_destination_img"
+                        android:layout_width="match_parent"
+                        android:layout_height="188dp"
+                        android:scaleType="fitXY" />
+                    <!-- 当前地区相关信息 天气-->
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_90"
+                        android:layout_gravity="bottom"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:layout_marginRight="@dimen/dp_20"
+                        android:layout_marginBottom="@dimen/dp_16"
+                        android:background="@drawable/shape_white_rectangle"
+                        android:padding="@dimen/dp_20">
+
+                        <TextView
+                            android:id="@+id/tv_destination_region_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_4"
+                            android:drawablePadding="@dimen/dp_4"
+                            android:text=""
+                            android:textColor="@color/main_black"
+                            android:textSize="23sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_destination_address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tv_destination_region_name"
+                            android:layout_marginTop="@dimen/dp_8"
+                            android:layout_marginBottom="@dimen/dp_4"
+                            android:text=""
+                            android:textColor="@color/main_gray"
+                            android:textSize="@dimen/sp_13" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_toRightOf="@+id/tv_destination_region_name"
+                            android:gravity="right">
+
+                            <ImageView
+                                android:id="@+id/iv_destination_weather"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp" />
+
+                            <TextView
+                                android:id="@+id/tv_destination_weather"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dp_10"
+                                android:layout_toRightOf="@+id/iv_destination_weather"
+                                android:text=""
+                                android:textColor="@color/main_black"
+                                android:textSize="@dimen/sp_14" />
+
+                            <TextView
+                                android:id="@+id/tv_destination_weather_des"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tv_destination_weather"
+                                android:layout_alignLeft="@+id/tv_destination_weather"
+                                android:layout_marginTop="@dimen/dp_6"
+                                android:text=""
+                                android:textColor="@color/main_black"
+                                android:textSize="@dimen/sp_13" />
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+                </FrameLayout>
+                <!-- 区县概况 -->
+                <LinearLayout
+                    android:id="@+id/ll_county_summary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_county_summary_more"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_16"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:layout_marginRight="@dimen/dp_16"
+                        android:drawableRight="@mipmap/right"
+                        android:text="区县概况"
+                        android:textColor="@color/main_black"
+                        android:textSize="@dimen/sp_20"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_destination_county_summary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dp_16"
+                        android:ellipsize="end"
+                        android:lineSpacingExtra="@dimen/dp_5"
+                        android:maxLines="3"
+                        android:minLines="1"
+                        android:paddingTop="@dimen/dp_4"
+                        android:paddingBottom="@dimen/dp_4" />
+
+                    <include layout="@layout/include_space_10" />
+                </LinearLayout>
+                <!-- 自驾游助手 -->
+                <LinearLayout
+                    android:id="@+id/ll_self_driving"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/tv_self_driving_more"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="16dp"
+                        android:drawableRight="@mipmap/right"
+                        android:text="自驾游助手"
+                        android:textColor="@color/main_black"
+                        android:textSize="@dimen/sp_20"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_self_driving_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="11dp"
+                        android:layout_marginRight="16dp"
+                        android:drawableLeft="@mipmap/destination_refresh"
+                        android:drawablePadding="8dp"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@color/main_gray"
+                        android:textSize="13sp" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_resource_sum"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:layout_marginBottom="@dimen/dp_20"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_destination_spot"
+                            style="@style/centerTextMain"
+                            android:drawableTop="@mipmap/destination_detail_spot_nornal"
+                            android:text="景区(0)" />
+
+                        <TextView
+                            android:id="@+id/tv_destination_hotel"
+                            style="@style/centerTextMain"
+                            android:drawableTop="@mipmap/destination_detail_hotel_nornal"
+                            android:text="酒店(0)" />
+
+                        <TextView
+                            android:id="@+id/tv_destination_shopping"
+                            style="@style/centerTextMain"
+                            android:drawableTop="@mipmap/destination_detail_shopping_nornal"
+                            android:text="购物(0)" />
+
+                        <TextView
+                            android:id="@+id/tv_destination_fun"
+                            style="@style/centerTextMain"
+                            android:drawableTop="@mipmap/destination_detail_fun_nornal"
+                            android:text="娱乐(0)" />
+
+                        <TextView
+                            android:id="@+id/tv_destination_food"
+                            style="@style/centerTextMain"
+                            android:drawableTop="@mipmap/jqxq_cs"
+                            android:text="厕所(0)" />
+
+                    </LinearLayout>
+
+                    <include layout="@layout/include_space_10" />
+                </LinearLayout>
+                <!-- 景区景点 -->
+                <LinearLayout
+                    android:id="@+id/ll_destination_spot"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/tv_spot_more"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="20dp"
+                        android:drawableRight="@mipmap/right"
+                        android:text="景区景点"
+                        android:textColor="@color/main_black"
+                        android:textSize="@dimen/sp_20"
+                        android:textStyle="bold" />
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:scrollbars="none">
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/recyclerView_spot"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="8dp"
+                            android:scrollbars="none" />
+                    </HorizontalScrollView>
+
+                    <include layout="@layout/include_space_10" />
+                </LinearLayout>
+                <!-- 特色美食 -->
+                <LinearLayout
+                    android:id="@+id/ll_destination_food"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_food_more"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="20dp"
+                        android:drawableRight="@mipmap/right"
+                        android:text="特色美食"
+                        android:textColor="@color/main_black"
+                        android:textSize="@dimen/sp_20"
+                        android:textStyle="bold" />
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:scrollbars="none">
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/recyclerView_food"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="8dp"
+                            android:scrollbars="none" />
+                    </HorizontalScrollView>
+
+                    <include layout="@layout/include_space_10" />
+                </LinearLayout>
+                <!-- 生态农庄（农家乐） -->
+                <LinearLayout
+                    android:id="@+id/ll_destination_family"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tv_family_more"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="20dp"
+                        android:drawableRight="@mipmap/right"
+                        android:text="农家乐"
+                        android:textColor="@color/main_black"
+                        android:textSize="@dimen/sp_20"
+                        android:textStyle="bold" />
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:scrollbars="none">
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/recyclerView_family"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scrollbars="none" />
+                    </HorizontalScrollView>
+
+                    <include layout="@layout/include_space_10" />
+                </LinearLayout>
+                <!-- 宜居住宿 -->
+                <LinearLayout
+                    android:id="@+id/ll_destination_hotel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_hotel_more"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="20dp"
+                        android:drawableRight="@mipmap/right"
+                        android:text="宜居住宿"
+                        android:textColor="@color/main_black"
+                        android:textSize="@dimen/sp_20"
+                        android:textStyle="bold" />
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:scrollbars="none">
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/recyclerView_hotel"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:scrollbars="none" />
+                    </HorizontalScrollView>
+
+                    <include layout="@layout/include_space_10" />
+                </LinearLayout>
+                <!-- 节庆活动 -->
+                <LinearLayout
+                    android:id="@+id/ll_destination_activity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_activity_more"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="16dp"
+                        android:drawableRight="@mipmap/right"
+                        android:text="节庆活动"
+                        android:textColor="@color/main_black"
+                        android:textSize="@dimen/sp_20"
+                        android:textStyle="bold" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/list_activity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none" />
+
+                    <include layout="@layout/include_space_10" />
+                </LinearLayout>
+                <!-- 游记攻略 -->
+                <LinearLayout
+                    android:id="@+id/ll_destination_strategy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_strategy_more"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="16dp"
+                        android:drawableRight="@mipmap/right"
+                        android:text="游记攻略"
+                        android:textColor="@color/main_black"
+                        android:textSize="@dimen/sp_20"
+                        android:textStyle="bold" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/list_strategy"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none" />
+
+                </LinearLayout>
+                <!-- 没有更多了 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/gray_line"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="@string/no_more"
+                    android:textColor="@color/txt_gray"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+    </com.example.tomasyb.baselib.refresh.SmartRefreshLayout>
+
+</LinearLayout>

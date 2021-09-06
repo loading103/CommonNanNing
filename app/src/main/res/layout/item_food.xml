@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/b_main_white">
+
+    <com.example.tomasyb.baselib.widget.img.RoundImageView
+        android:id="@+id/image"
+        android:layout_width="120dp"
+        android:layout_height="90dp"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginBottom="@dimen/dp_16"
+        android:scaleType="fitCenter"
+        app:corner_radius="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:type="round" />
+
+    <TextView
+        android:id="@+id/pics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/dp_16"
+        android:layout_marginBottom="@dimen/dp_16"
+        android:background="#77000000"
+        android:text="00"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/image"
+        app:layout_constraintEnd_toEndOf="@+id/image" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:layout_marginStart="@dimen/dp_12"
+        android:ellipsize="end"
+        android:gravity="left|center_vertical"
+        android:singleLine="true"
+        android:text="菜名"
+        android:textColor="@color/b_txt_black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/recommend"
+        app:layout_constraintStart_toEndOf="@+id/image"
+        app:layout_constraintTop_toTopOf="@+id/image" />
+
+
+    <TextView
+        android:id="@+id/book"
+        android:layout_width="@dimen/dp_16"
+        android:layout_height="@dimen/dp_16"
+        android:layout_marginRight="@dimen/dp_16"
+        android:background="@mipmap/list_label_1"
+        android:gravity="center"
+        android:text="订"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_10"
+        app:layout_constraintBottom_toBottomOf="@+id/name"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/name" />
+
+    <TextView
+        android:id="@+id/recommend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="4dp"
+        android:background="@mipmap/list_label_2"
+        android:gravity="center"
+        android:text="荐"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_10"
+        app:layout_constraintBottom_toBottomOf="@+id/name"
+        app:layout_constraintRight_toLeftOf="@+id/book"
+        app:layout_constraintTop_toTopOf="@+id/name" />
+
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="@dimen/dp_16"
+        android:ellipsize="end"
+        android:lines="2"
+        android:text="食物介绍"
+        android:lineSpacingExtra="@dimen/dp_5"
+        android:textColor="@color/b_text_gray"
+        android:textSize="13sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintLeft_toRightOf="@+id/image"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <TextView
+        android:textStyle="bold"
+        android:id="@+id/comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:layout_marginTop="6dp"
+        android:text="0"
+        android:textColor="@color/main_black"
+        android:textSize="11sp"
+        app:layout_constraintLeft_toRightOf="@+id/image"
+        app:layout_constraintTop_toBottomOf="@+id/address" />
+    <TextView
+        android:id="@+id/tv_tag"
+        app:layout_constraintTop_toTopOf="@+id/comment"
+        app:layout_constraintBottom_toBottomOf="@+id/comment"
+        app:layout_constraintLeft_toRightOf="@+id/comment"
+        android:textColor="@color/main_gray"
+        android:textSize="12sp"
+        android:text="评论   •"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:textStyle="bold"
+        android:id="@+id/relate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="0"
+        android:textColor="@color/main_black"
+        android:textSize="11sp"
+        app:layout_constraintLeft_toRightOf="@+id/tv_tag"
+        app:layout_constraintTop_toTopOf="@+id/tv_tag"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_tag" />
+    <TextView
+        android:id="@+id/tv_tag1"
+        app:layout_constraintTop_toTopOf="@+id/relate"
+        app:layout_constraintBottom_toBottomOf="@+id/relate"
+        app:layout_constraintLeft_toRightOf="@+id/relate"
+        android:textColor="@color/main_gray"
+        android:textSize="12sp"
+        android:text="个相关餐馆"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</android.support.constraint.ConstraintLayout>

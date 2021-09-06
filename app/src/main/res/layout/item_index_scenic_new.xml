@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_scenic_two_ll"
+    android:layout_width="@dimen/dp_140"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/dp_5"
+    android:layout_marginRight="@dimen/dp_5"
+    android:orientation="vertical">
+
+    <com.example.tomasyb.baselib.widget.img.RoundImageView
+        android:id="@+id/img_index_scenic"
+        android:layout_width="@dimen/dp_140"
+        android:layout_height="@dimen/dp_105"
+        android:scaleType="fitCenter"
+        app:corner_radius="@dimen/dp_3"
+        app:type="round" />
+
+    <TextView
+        android:id="@+id/tv_index_scenic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_12"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textColor="@color/main_black"
+        android:textSize="@dimen/sp_15" />
+</LinearLayout>

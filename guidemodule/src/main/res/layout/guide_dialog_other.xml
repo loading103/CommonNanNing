@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/guide_pop_big"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/dp_20">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/img_tag"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                app:actualImageScaleType="centerCrop"
+                app:backgroundImage="@mipmap/banner_default"
+                app:failureImage="@mipmap/banner_default"
+                app:failureImageScaleType="centerCrop"
+                app:placeholderImage="@mipmap/banner_default"
+                app:placeholderImageScaleType="centerCrop"
+                app:retryImage="@mipmap/banner_default"
+                app:roundAsCircle="true"
+                app:roundedCornerRadius="5dp"
+                app:viewAspectRatio="1.33" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txt_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLength="12"
+                    android:text="江西千户苗寨是一个保存苗族原始生态"
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/sp_16"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:text=""
+                    android:textColor="@color/txt_gray"
+                    android:textSize="@dimen/sp_13" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

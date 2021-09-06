@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--智能刷新控件-->
+<com.example.tomasyb.baselib.refresh.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/refreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:background="@color/white"
+    app:srlEnablePreviewInEditMode="false">
+    <!--头部-->
+    <com.example.tomasyb.baselib.refresh.header.ClassicsHeader
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srlAccentColor="@color/main_gray"
+        app:srlClassicsSpinnerStyle="FixedBehind"
+        app:srlDrawableArrowSize="@dimen/dp_20"
+        app:srlDrawableMarginRight="@dimen/dp_20"
+        app:srlDrawableProgress="@drawable/ic_progress_puzzle"
+        app:srlDrawableProgressSize="@dimen/dp_20"
+        app:srlEnableLastTime="true"
+        app:srlFinishDuration="500"
+        app:srlTextSizeTime="@dimen/dp_10"
+        app:srlTextSizeTitle="@dimen/sp_16"
+        app:srlTextTimeMarginTop="@dimen/dp_2" />
+
+    <io.agora.yview.scrollview.JudgeNestedScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="com.daqsoft.commonnanning.ui.service.TravelAgencyDetailsActivity">
+
+
+            <com.example.tomasyb.baselib.widget.HeadView
+                android:id="@+id/headView_details_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/iv_details_img"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_187"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/headView_details_title" />
+
+            <TextView
+                android:id="@+id/tv_details_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginRight="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_20"
+                android:textColor="@color/main_black"
+                android:textSize="@dimen/sp_21"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/iv_details_img"
+                tools:text="广西康辉" />
+
+            <LinearLayout
+                android:id="@+id/ll_details_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginRight="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_20"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/tv_details_name">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_address"
+                    android:textColor="@color/main_black_gray"
+                    android:textSize="@dimen/sp_13" />
+
+                <TextView
+                    android:id="@+id/tv_details_address"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_weight="1"
+                    android:textColor="@color/main_black_gray"
+                    android:textSize="@dimen/sp_13" />
+
+                <ImageView
+                    android:id="@+id/iv_details_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:src="@mipmap/travel_agency_detail_address" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_details_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginRight="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_12"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/ll_details_address">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_phone"
+                    android:textColor="@color/main_black_gray"
+                    android:textSize="@dimen/sp_13" />
+
+                <TextView
+                    android:id="@+id/tv_details_phone"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_weight="1"
+                    android:textColor="@color/main_black_gray"
+                    android:textSize="@dimen/sp_13" />
+
+                <ImageView
+                    android:id="@+id/iv_details_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:src="@mipmap/travel_agency_detail_phone" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_line"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_20"
+                android:background="@color/main_light2"
+                app:layout_constraintTop_toBottomOf="@+id/ll_details_phone" />
+
+            <TextView
+                android:id="@+id/tv_travel_info_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginRight="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_20"
+                android:text="@string/travel_info"
+                android:textColor="@color/main_black"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/view_line" />
+
+            <WebView
+                android:id="@+id/tv_details_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginRight="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_16"
+                android:text=""
+                android:textColor="@color/main_black"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintTop_toBottomOf="@+id/tv_travel_info_title"
+                tools:text="广西" />
+
+        </android.support.constraint.ConstraintLayout>
+    </io.agora.yview.scrollview.JudgeNestedScrollView>
+</com.example.tomasyb.baselib.refresh.SmartRefreshLayout>

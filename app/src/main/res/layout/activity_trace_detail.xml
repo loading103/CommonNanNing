@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.example.tomasyb.baselib.widget.HeadView
+        android:id="@+id/mHeadView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.amap.api.maps.MapView
+        android:id="@+id/mMap"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_255"
+        app:layout_constraintBottom_toBottomOf="@id/mContentCl"
+        app:layout_constraintLeft_toLeftOf="@id/mContentCl"
+        app:layout_constraintRight_toRightOf="@id/mContentCl"
+        app:layout_constraintTop_toTopOf="@id/mContentCl" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/mContentCl"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@mipmap/zuji_img_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mHeadView">
+
+
+        <ImageView
+            android:id="@+id/mHeadIv"
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_60"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_24"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/mTitleTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_12"
+
+            android:layout_marginRight="@dimen/dp_16"
+            android:textColor="#00CEB9"
+            android:textSize="@dimen/sp_18"
+            app:layout_constraintBottom_toTopOf="@id/mCountTv"
+            app:layout_constraintLeft_toRightOf="@id/mHeadIv"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/mHeadIv"
+            tools:text="卷卷卷 的乌鲁木齐旅行地图" />
+
+        <TextView
+            android:id="@+id/mCountTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginRight="@dimen/dp_16"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/mHeadIv"
+            app:layout_constraintLeft_toRightOf="@id/mHeadIv"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mTitleTv"
+            tools:text="一共去过12个景点" />
+
+        <ImageView
+            android:id="@+id/mLeftArrowIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_47"
+            android:src="@mipmap/zuji_left_arrow"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/mCityNameTv"
+            app:layout_constraintTop_toBottomOf="@id/mCountTv" />
+
+        <TextView
+            android:id="@+id/mCityNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toRightOf="@id/mLeftArrowIv"
+            app:layout_constraintRight_toLeftOf="@id/mWolaiguoIv"
+            app:layout_constraintTop_toBottomOf="@id/mLeftArrowIv"
+            tools:text="乌鲁木齐" />
+
+        <ImageView
+            android:id="@+id/mWolaiguoIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_9"
+            android:src="@mipmap/zuji_wolaiguo"
+            app:layout_constraintBottom_toBottomOf="@id/mCityNameTv"
+            app:layout_constraintLeft_toRightOf="@id/mCityNameTv"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/mCityNameTv" />
+
+
+        <TextView
+            android:id="@+id/mScenicTitleTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:layout_marginBottom="@dimen/dp_13"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_13"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/mScenicTv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:text="我去过的乌鲁木齐景区：" />
+
+        <TextView
+            android:id="@+id/mScenicTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:layout_marginRight="@dimen/dp_16"
+            android:layout_marginBottom="@dimen/dp_40"
+            android:textColor="#08ceb2"
+            android:textSize="@dimen/sp_13"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="天山大峡谷 / 丝绸之路国际度假区 / 国际大巴扎歌舞大剧院" />
+    </android.support.constraint.ConstraintLayout>
+
+
+</android.support.constraint.ConstraintLayout>

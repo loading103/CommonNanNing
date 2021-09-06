@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/mRootLl"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_20">
+
+        <ImageView
+            android:id="@+id/mRecommendIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/home_jingdiantuijian"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/mRecommendScenicTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/txt_black_gray"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/mRecommendIv"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="走婚桥" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="为您优选，附近最近景点推荐"
+            app:layout_constraintLeft_toRightOf="@+id/mRecommendIv"
+            app:layout_constraintTop_toBottomOf="@+id/mRecommendScenicTv" />
+
+        <TextView
+            android:id="@+id/mDistanceTv"
+            android:layout_width="wrap_content"
+            android:layout_height="14sp"
+            android:layout_marginLeft="4dp"
+            android:background="@drawable/shape_slm_distance_tag"
+            android:gravity="center"
+            android:paddingLeft="@dimen/dp_6"
+            android:paddingRight="@dimen/dp_6"
+            android:textColor="#FFA800"
+            android:textSize="10sp"
+            app:layout_constraintLeft_toRightOf="@+id/mRecommendScenicTv"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="距您0.2Km" />
+    </android.support.constraint.ConstraintLayout>
+</LinearLayout>

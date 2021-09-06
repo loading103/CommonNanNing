@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 性别-->
+    <string-array name="sex_list">
+        <item>男</item>
+        <item>女</item>
+        <item>保密</item>
+    </string-array>
+    <string-array name="found_near_tag">
+        <item>景点</item>
+        <item>酒店</item>
+        <item>餐饮场所</item>
+        <item>购物</item>
+        <item>娱乐</item>
+
+        <item>特色美食</item>
+        <item>停车场</item>
+        <item>加油站</item>
+        <item>厕所</item>
+        <item>客运站</item>
+        <item>医疗点</item>
+    </string-array>
+    <string-array name="found_near_tag1">
+        <item>景点</item>
+        <item>酒店</item>
+        <item>餐饮场所</item>
+        <item>购物</item>
+        <item>娱乐</item>
+
+        <item>旅行社</item>
+        <item>乡村旅游</item>
+
+        <item>特色美食</item>
+        <item>旅游场所</item>
+        <item>停车场</item>
+        <item>加油站</item>
+        <item>厕所</item>
+        <item>机场</item>
+        <item>客运站</item>
+        <item>医疗点</item>
+    </string-array>
+    <string-array name="hotel_selector_type">
+        <item>酒店星级</item>
+        <item>酒店类型</item>
+        <item>其他服务</item>
+    </string-array>
+    <string-array name="hotel_selector_type_value">
+        <item>resourceLevel</item>
+        <item>grade</item>
+        <item>specialService</item>
+    </string-array>
+    <string-array name="scenic_selector_type">
+        <item>景区等级</item>
+        <item>景区主题</item>
+        <item>适合人群</item>
+        <item>景区类型</item>
+    </string-array>
+    <string-array name="scenic_selector_type_value">
+        <item>resourceLevel</item>
+        <item>scenicTheme</item>
+        <item>matterCrowd</item>
+        <item>resourceType</item>
+    </string-array>
+    <string-array name="index_title">
+        <item>景区</item>
+        <item>酒店</item>
+    </string-array>
+    <!--首页菜单名称集合-->
+    <string-array name="index_menu_name"></string-array>
+    <!--首页菜单标识集合-->
+    <string-array name="index_menu_type"></string-array>
+
+    <!--服务标题-->
+    <string-array name="server_menu_title">
+        <item>在线机器人</item>
+        <item>导游导览</item>
+        <item>智能行程</item>
+        <item>在线投诉</item>
+        <item>旅游资讯</item>
+        <item>交通指南</item>
+        <item>旅行社</item>
+    </string-array>
+    <!--服务描述-->
+    <string-array name="server_menu_info">
+        <item>Onliner robot</item>
+        <item>Guided tour</item>
+        <item>Smart journey</item>
+        <item>Online complaint</item>
+        <item>Travel information</item>
+        <item>Traffic guide</item>
+        <item>Travel agency</item>
+    </string-array>
+    <!--服务内容-->
+    <string-array name="server_menu_content">
+        <item>有什么问题 先问问我吧</item>
+        <item>专业优质 智能导游</item>
+        <item>智能出行 一触即达</item>
+        <item>投诉有门 实时高效</item>
+        <item>最新资讯 一网打尽</item>
+        <item>最新信息 及时掌握</item>
+        <item>随心出发 欢乐有趣</item>
+    </string-array>
+    <!--服务标题颜色-->
+    <array name="server_title_color">
+        <item>#ff9405</item>
+        <item>#50a41e</item>
+        <item>#09ba07</item>
+        <item>#03a8cf</item>
+        <item>#877dce</item>
+        <item>#f36e4a</item>
+        <item>#ca7d22</item>
+    </array>
+    <!--服务描述颜色-->
+    <array name="server_info_color">
+        <item>#fcdb84</item>
+        <item>#9bc97f</item>
+        <item>#a3e6a2</item>
+        <item>#90d5e5</item>
+        <item>#bab4e3</item>
+        <item>#f36e4a</item>
+        <item>#e2b988</item>
+    </array>
+    <!--服务背景颜色-->
+    <array name="server_bg_img">
+        <item>@mipmap/service_robot_bg</item>
+        <item>@mipmap/service_guided_bg</item>
+        <item>@mipmap/service_stroke_bg</item>
+        <item>@mipmap/service_complaint_bg</item>
+        <item>@mipmap/service_news_bg</item>
+        <item>@mipmap/service_traffic_bg</item>
+        <item>@mipmap/service_travel_agency_bg</item>
+    </array>
+    <!--服务图标-->
+    <array name="server_icon">
+        <item>@mipmap/service_robot_pic</item>
+        <item>@mipmap/service_guided_pic</item>
+        <item>@mipmap/service_stroke_pic</item>
+        <item>@mipmap/service_complaint_pic</item>
+        <item>@mipmap/service_news_pic</item>
+        <item>@mipmap/service_traffic_pic</item>
+        <item>@mipmap/service_travel_agency_pic</item>
+    </array>
+
+    <!--服务类型标识-->
+    <string-array name="server_type">
+        <item>robot</item>
+        <item>guide</item>
+        <item>stroke</item>
+        <item>complaint</item>
+        <item>news</item>
+        <item>traffic</item>
+        <item>travelAgency</item>
+    </string-array>
+</resources>

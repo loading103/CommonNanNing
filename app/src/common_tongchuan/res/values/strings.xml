@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">铜川旅游</string>
+    <string-array name="mine_apply_name">
+        <item>我的订单</item>
+        <item>电子消费码</item>
+        <item>我的退款</item>
+        <item>收货地址</item>
+        <item>我的行程</item>
+        <item>我的投诉</item>
+        <item>在线留言</item>
+        <item>意见反馈</item>
+    </string-array>
+    <string-array name="mine_apply_id">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+    <string-array name="main_page_index">
+        <item>首页</item>
+        <item>好玩</item>
+        <item>预订</item>
+        <item>服务</item>
+        <item>我的</item>
+    </string-array>
+    <string-array name="find_titles">
+        <item>节庆活动</item>
+        <item>资讯铜川</item>
+        <item>最美铜川</item>
+        <item>风味铜川</item>
+        <item>物产铜川</item>
+    </string-array>
+</resources>

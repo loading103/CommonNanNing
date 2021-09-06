@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="64dp"
+    android:layout_height="30dp"
+    android:background="@drawable/selector_back_white_blue"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="12dp"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+    <TextView
+        android:duplicateParentState="true"
+        android:id="@+id/lable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="中餐厅"
+        android:textColor="@drawable/selector_text_grey_white"
+        android:textSize="@dimen/sp_13" />
+    <TextView
+        android:layout_width="12dp"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+</LinearLayout>

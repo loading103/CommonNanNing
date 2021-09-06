@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/tab_index"
+        icon="@mipmap/home_tab_home_normal"
+        title="首页" />
+    <tab
+        id="@+id/tab_fun"
+        icon="@mipmap/home_tab_fun_normal"
+        title="好玩" />
+    <tab
+        id="@+id/tab_shop"
+        icon="@mipmap/home_tab_mall_normal"
+        title="预订" />
+    <tab
+        id="@+id/tab_server"
+        icon="@mipmap/home_tab_service_normal"
+        title="服务" />
+    <tab
+        id="@+id/tab_me"
+        icon="@mipmap/home_tab_mine_normal"
+        title="我的" />
+</tabs>

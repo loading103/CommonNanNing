@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bg">
+
+    <LinearLayout
+        android:id="@+id/layout_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/layout_bottom"
+        android:orientation="vertical">
+
+        <com.daqsoft.view.HeadView
+            android:id="@+id/view_headView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.daqsoft.view.mapview.MyMapView
+                android:id="@+id/mapView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@mipmap/guide_map_compass"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/img_offline"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@color/white"
+                    android:drawableTop="@mipmap/guide_download_normal"
+                    android:drawablePadding="@dimen/dp_3"
+                    android:padding="@dimen/dp_10"
+                    android:text="下载"
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/sp_10"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/img_location"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:src="@mipmap/guide_positioning_normal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true">
+
+                <TextView
+                    android:id="@+id/tv_scenic_map_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/sp_16"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:background="@mipmap/guide_button_scenicmap"
+                    android:drawableLeft="@mipmap/guide_icon_scenicmap"
+                    android:drawablePadding="@dimen/dp_5"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/dp_8"
+                    android:text="景区导览"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_13"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <com.daqsoft.view.guide.MapGuideContentView
+                android:id="@+id/guideContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent" />
+
+            <LinearLayout
+                android:id="@+id/ll_palyAudio"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:background="#80000000"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp_4"
+                android:visibility="gone">
+
+                <com.daqsoft.view.AudioPlayView
+                    android:id="@+id/v_audioPlayView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    app:count="5"
+                    app:space="5"
+                    app:tagColor="@android:color/white"
+                    app:tagMaxHeight="50"
+                    app:tagMinHeight="10"
+                    app:tagWidth="5" />
+
+                <TextView
+                    android:id="@+id/txt_play_audio_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="正在播放"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/sp_12" />
+
+                <ImageView
+                    android:id="@+id/img_stopAudio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:paddingRight="@dimen/dp_10"
+                    android:src="@mipmap/guide_playing_close" />
+            </LinearLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:button="@null"
+            android:drawableTop="@drawable/select_scenic"
+            android:ems="5"
+            android:gravity="center"
+            android:paddingTop="@dimen/dp_10"
+            android:paddingBottom="@dimen/dp_10"
+            android:text="景点"
+            android:textColor="@color/select_gray_to_orange"
+            android:textSize="@dimen/sp_12"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white">
+
+        <com.daqsoft.view.guide.MapInformationMenuView
+            android:id="@+id/layout_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

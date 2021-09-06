@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/b_main_white"
+    android:paddingBottom="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:gravity="center_vertical"
+        android:id="@+id/textView15"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_title"
+        app:layout_constraintTop_toTopOf="@+id/img2"
+        app:layout_constraintBottom_toBottomOf="@+id/img7"
+        android:textColor="@color/b_text_gray"
+        android:textSize="12sp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="步行"/>
+    <TextView
+        android:id="@+id/tv_title"
+        android:textStyle="bold"
+        android:textColor="@color/b_main_black"
+        android:textSize="14sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="终点"
+        app:layout_constraintBottom_toBottomOf="@+id/img1"
+        app:layout_constraintStart_toEndOf="@+id/img1"
+        app:layout_constraintTop_toTopOf="@+id/img1" />
+    <ImageView
+        android:id="@+id/img1"
+        android:layout_marginTop="5dp"
+        app:layout_constraintLeft_toLeftOf="@+id/img2"
+        app:layout_constraintRight_toRightOf="@+id/img2"
+        app:layout_constraintTop_toBottomOf="@+id/img7"
+        android:src="@drawable/bg_cicle_solid_red_white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/img2"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bg_cicle_solid_gray"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+    <ImageView
+        android:id="@+id/img3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="@+id/img1"
+        app:layout_constraintRight_toRightOf="@+id/img1"
+        app:layout_constraintTop_toBottomOf="@+id/img2"
+        android:src="@drawable/bg_cicle_solid_gray" />
+    <ImageView
+        android:id="@+id/img4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="@+id/img1"
+        app:layout_constraintRight_toRightOf="@+id/img1"
+        app:layout_constraintTop_toBottomOf="@+id/img3"
+        android:src="@drawable/bg_cicle_solid_gray" />
+    <ImageView
+        android:id="@+id/img5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="@+id/img1"
+        app:layout_constraintRight_toRightOf="@+id/img1"
+        app:layout_constraintTop_toBottomOf="@+id/img4"
+        android:src="@drawable/bg_cicle_solid_gray" />
+    <ImageView
+        android:id="@+id/img6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="@+id/img1"
+        app:layout_constraintRight_toRightOf="@+id/img1"
+        app:layout_constraintTop_toBottomOf="@+id/img5"
+        android:src="@drawable/bg_cicle_solid_gray" />
+    <ImageView
+        android:id="@+id/img7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="@+id/img1"
+        app:layout_constraintRight_toRightOf="@+id/img1"
+        app:layout_constraintTop_toBottomOf="@+id/img6"
+        android:src="@drawable/bg_cicle_solid_gray" />
+</android.support.constraint.ConstraintLayout>

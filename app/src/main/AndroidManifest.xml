@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.daqsoft.commonnanning">
+
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <protected-broadcast android:name="android.intent.action.MEDIA_MOUNTED" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" /> <!-- 微信权限，微博权限，qq只需前两个 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" /> <!-- 在sdcard中创建/删除文件的权限 -->
+    <uses-permission
+        android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+    <!--
+    _________________________________________________________地图SDK（包含其搜索功能）需要的基础权限
+    1、WRITE_EXTERNAL_STORAGE :允许程序设置内置sd卡的写权限
+    2、INTERNET :允许程序打开网络套接字
+    3、ACCESS_NETWORK_STATE :允许程序获取网络状态
+    4、ACCESS_WIFI_STATE :允许程序访问WiFi网络信息
+    5、READ_PHONE_STATE: 允许程序读写手机状态和身份
+    6、ACCESS_COARSE_LOCATION:允许程序访问CellID或WiFi热点来获取粗略的位置(如下)
+    -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- 这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <!-- AR配置开始 -->
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <uses-feature android:glEsVersion="0x00020000" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.touchscreen.multitouch"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.touchscreen.multitouch.distinct"
+        android:required="false" />
+
+    <application
+        android:name=".base.IApplication"
+        android:icon="@mipmap/icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".ui.mine.message.MessageDetailsActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".ui.service.fun.MonitorActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.service.fun.FunActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.service.PassengerFlowActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.webview.BaseWebFileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--
+友盟统计
+        UMENG_CHANNEL配置渠道
+        由于一般会有多个渠道，所以这里的渠道名称不能写死，应该设置成动态的
+        -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="${UMENGAPPKEY}" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="${UMENGCHANNEL}" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${AUTHORITIED}"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".scenic.ScenicActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".hotel.HotelActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.service.UserServiceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".food.FoodActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".food_detial.FoodDetialActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.daqsoft.guide.MapInformationActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name=".ui.mine.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.mine.RegisterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.mine.UpdatePwdActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.daqsoft.guide.WebActivtiy"/>
+        <activity
+            android:name=".ui.mine.MineInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.mine.BindPhoneActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.mine.MineActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.mine.ChangeNameActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.mine.interact.ThumbActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.mine.interact.CommentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.mine.interact.CollectActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.main.FestivalActivitiesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.main.ScenicVideoListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.service.ContentWebActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.main.ScenicChildListActivity"
+            android:screenOrientation="portrait" /> <!-- qq配置开始 -->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent101571517" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" /> <!-- qq配置结束 -->
+        <!-- 微信登录配置 start  WXEntryActivity 必须在包名下 -->
+        <activity
+            android:name="com.daqsoft.common.nanning.wxapi.WXEntryActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="true"
+            android:theme="@style/wx_login_style" /> <!-- 微信登录配置 end -->
+        <!-- 微信登录配置 start  WXEntryActivity 必须在包名下 -->
+        <activity
+            android:name="com.daqsoft.common.xlglm.wxapi.WXEntryActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="true"
+            android:theme="@style/wx_login_style" /> <!-- 微信登录配置 end -->
+
+        <activity
+            android:name="com.daqsoft.android.quanyu.xizang.wxapi.WXEntryActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="true"
+            android:theme="@style/wx_login_style"
+            tools:ignore="MissingClass" /> <!-- 微信登录配置 end -->
+        <!-- 微信登录配置 start  WXEntryActivity 必须在包名下 -->
+
+
+        <activity
+            android:name=".ui.main.shop.ShopActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.service.complaint.OnlinecomplaintContentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.service.complaint.ComplaintDescriptActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="me.nereo.multi_image_selector.MultiImageSelectorActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.service.complaint.ComplaintListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.service.complaint.ComplaintdetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.service.complaint.ComplaintQueryResultActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.service.complaint.OnlineComplaintActivity"
+            android:screenOrientation="portrait" /> <!-- 高德相关 -->
+        <!-- //开发者申请的key -->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="${AMAP}" /> <!-- 定位需要的服务 使用2.0的定位需要加上这个 -->
+        <service android:name="com.amap.api.location.APSService" />
+        <service android:name="com.daqsoft.service.MediaPlayerService" /> <!-- 配置的activity结束 -->
+        <activity
+            android:name=".ui.service.TravelAgencyActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name=".ui.main.PanoramaListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.main.LineActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.main.LineDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.main.CommentMoreActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.service.ToiletListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.service.news.NewsListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.service.news.NewsWebActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".base.BaseWebActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.service.FoundNearNewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.robot.RobotActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.robot.RobotXqActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.main.GuideListActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name="com.daqsoft.guide.SpotDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.main.GlobalSearchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.mine.online.OnLineMessageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.mine.online.OnLineMessageListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.mine.online.MessageDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.mine.OpinionActivity"
+            android:screenOrientation="portrait" /> <!-- 移动统计分析 -->
+        <meta-data
+            android:name="IFLYTEK_APPKEY"
+            android:value="&apos;5c99dp_8ec&apos;" />
+        <meta-data
+            android:name="IFLYTEK_CHANNEL"
+            android:value="Android_Demo" />
+
+        <activity
+            android:name=".ui.main.ScenicDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.main.ScenicChildDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.main.HotelDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".scenic.VideoPlayActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="user"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".ui.route.RouteWebActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.main.WriteCommentActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.scenic.ScenicOverview" /> <!-- 自动更新下载的服务 -->
+        <service android:name=".version.service.UpdateService" />
+
+        <receiver android:name=".version.receiver.UpdateBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
+                <!-- <action android:name="android.intent.action.PACKAGE_INSTALL" /> -->
+            </intent-filter>
+        </receiver> <!-- AR相关 -->
+        <activity android:name="com.secondfury.galleryscreenshot.MainActivity" />
+        <activity
+            android:name=".ar.UnityPlayerActivity"
+            android:parentActivityName=".MainActivity"
+            android:process=":UnityPlayerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+
+        <meta-data
+            android:name="unity.build-id"
+            android:value="2684684f-9d2b-46d0-8bc6-0c6e0d396442" />
+        <meta-data
+            android:name="unity.splash-mode"
+            android:value="1" />
+        <meta-data
+            android:name="unity.splash-enable"
+            android:value="True" />
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.1" /> <!-- Ar相关结束 -->
+        <activity
+            android:name=".ui.police.OnePoliceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.mine.message.MessageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.country.CountryListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.country.CountryDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.specialty.SpecialtyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.specialty.SpecialtyDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.book.LibraryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.book.BookDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.service.TravelAgencyDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.destination.DestinationDetailsActivity" />
+        <activity android:name=".ui.trace.TraceActivity" />
+        <activity android:name=".ui.trace.TraceDetailActivity" />
+        <activity
+            android:name=".ui.trace.ScenicChooseActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ui.trace.ScenicConfirmActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.trace.TraceIntroActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.destination.CountySummaryActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.main.PromotionalVideoActivity" />
+        <activity
+            android:name=".ui.scenic.AudioActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.main.EntertainmentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.main.EntertainDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.service.guide.GuideActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.service.guide.GuideQueryListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.daqsoft.common.bole.wxapi.WXEntryActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="true"
+            android:theme="@style/wx_login_style" />
+    </application>
+
+</manifest>

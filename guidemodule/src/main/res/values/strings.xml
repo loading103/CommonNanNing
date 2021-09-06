@@ -1,0 +1,6 @@
+<resources>
+    <string name="dialog_loading">加载中...</string>
+    <string name="please_wait_text">请稍后</string>
+    <string name="m_icon_meiyong">&#xe603;</string>
+    <string name="title_activity_web_activtiy">WebActivtiy</string>
+</resources>

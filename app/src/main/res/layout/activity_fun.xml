@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="com.daqsoft.commonnanning.ui.service.fun.FunActivity">
+
+    <com.example.tomasyb.baselib.widget.HeadView
+        android:id="@+id/head_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <io.agora.yview.scrollview.JudgeNestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <io.agora.yview.banner.ConvenientBanner
+                android:id="@+id/banner_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_150"
+                app:autoTurningTime="3000"
+                app:canLoop="true" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_16"
+                android:text="超好玩"
+                android:textColor="@color/main_black"
+                android:textSize="@dimen/sp_20"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginBottom="@dimen/dp_20"
+                android:orientation="horizontal">
+
+                <com.daqsoft.commonnanning.view.CenterDrawableTextView
+                    android:id="@+id/fun_activity"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@mipmap/found_home_festival"
+                    android:drawablePadding="@dimen/dp_8"
+                    android:gravity="center"
+                    android:text="节会活动"
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/sp_13" />
+
+                <com.daqsoft.commonnanning.view.CenterDrawableTextView
+                    android:id="@+id/fun_vote"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@mipmap/found_home_vote"
+                    android:drawablePadding="@dimen/dp_8"
+                    android:gravity="center"
+                    android:text="网络投票"
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/sp_13" />
+
+                <com.daqsoft.commonnanning.view.CenterDrawableTextView
+                    android:id="@+id/fun_experience"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@mipmap/found_home_experience"
+                    android:drawablePadding="@dimen/dp_8"
+                    android:gravity="center"
+                    android:text="体验招募"
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/sp_13" />
+
+                <com.daqsoft.commonnanning.view.CenterDrawableTextView
+                    android:id="@+id/fun_group"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@mipmap/found_home_group"
+                    android:drawablePadding="@dimen/dp_8"
+                    android:gravity="center"
+                    android:text="拼组团"
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/sp_13" />
+
+            </LinearLayout>
+
+            <include layout="@layout/include_space_10_gray" />
+
+            <TextView
+                android:id="@+id/fun_map"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_16"
+                android:drawableRight="@mipmap/right"
+                android:text="身边游"
+                android:textColor="@color/main_black"
+                android:textSize="@dimen/sp_20"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/fun_self_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_11"
+                android:layout_marginRight="@dimen/dp_16"
+                android:drawableLeft="@mipmap/destination_refresh"
+                android:drawablePadding="@dimen/dp_8"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/main_gray"
+                android:textSize="@dimen/sp_13" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginBottom="@dimen/dp_20"
+                android:orientation="horizontal">
+
+                <com.daqsoft.commonnanning.view.CenterDrawableTextView
+                    android:id="@+id/fun_scenic"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@mipmap/found_home_spot_normal"
+                    android:drawablePadding="@dimen/dp_8"
+                    android:gravity="center"
+                    android:text="景区"
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/sp_13" />
+
+                <com.daqsoft.commonnanning.view.CenterDrawableTextView
+                    android:id="@+id/fun_hotel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@mipmap/found_home_hotel_normal"
+                    android:drawablePadding="@dimen/dp_8"
+                    android:gravity="center"
+                    android:text="酒店"
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/sp_13" />
+
+                <com.daqsoft.commonnanning.view.CenterDrawableTextView
+                    android:id="@+id/fun_food"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@mipmap/found_home_food_normal"
+                    android:drawablePadding="@dimen/dp_8"
+                    android:gravity="center"
+                    android:text="美食"
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/sp_13" />
+
+                <com.daqsoft.commonnanning.view.CenterDrawableTextView
+                    android:id="@+id/fun_shopping"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@mipmap/found_home_shopping_normal"
+                    android:drawablePadding="@dimen/dp_8"
+                    android:gravity="center"
+                    android:text="购物"
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/sp_13" />
+
+                <com.daqsoft.commonnanning.view.CenterDrawableTextView
+                    android:id="@+id/fun_recreation"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@mipmap/found_home_fun_normal"
+                    android:drawablePadding="@dimen/dp_8"
+                    android:gravity="center"
+                    android:text="娱乐"
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/sp_13" />
+
+            </LinearLayout>
+
+            <include layout="@layout/include_space_10_gray" />
+
+            <LinearLayout
+                android:id="@+id/ll_recommend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/fun_recommend"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:drawableRight="@mipmap/right"
+                    android:text="好玩推荐"
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/sp_20"
+                    android:textStyle="bold" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/fun_recommend_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_20"
+                    android:scrollbars="none" />
+
+                <include layout="@layout/include_space_10_gray" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_live"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/fun_live"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:drawableRight="@mipmap/right"
+                    android:text="探风景"
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/sp_20"
+                    android:textStyle="bold" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/fun_live_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_20"
+                    android:scrollbars="none" />
+
+                <include layout="@layout/include_space_10_gray" />
+                android:orientation="vertical">
+            </LinearLayout>
+        </LinearLayout>
+
+    </io.agora.yview.scrollview.JudgeNestedScrollView>
+
+</LinearLayout>

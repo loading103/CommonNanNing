@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.example.tomasyb.baselib.widget.img.RoundImageView
+        app:type="round"
+        app:corner_radius="@dimen/dp_3"
+        android:id="@+id/iv_item_resource_img"
+        android:layout_width="@dimen/dp_80"
+        android:layout_height="@dimen/dp_60"
+        android:layout_marginRight="@dimen/dp_8"
+        android:layout_marginTop="@dimen/dp_8"
+        android:scaleType="fitCenter"
+        android:src="@mipmap/common_image_small" />
+
+</LinearLayout>

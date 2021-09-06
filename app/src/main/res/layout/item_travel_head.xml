@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!--banner-->
+        <io.agora.yview.banner.ConvenientBanner
+            android:id="@+id/index_banner"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:autoTurningTime="3000"
+            app:canLoop="true" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/dp_10">
+
+        <TextView
+            android:id="@+id/tv_location"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableLeft="@mipmap/list_position"
+            android:drawablePadding="10dp"
+            android:text="@string/no_address"
+            android:textColor="@color/main_gray"
+            android:textSize="14sp" />
+
+        <ViewAnimator
+            android:id="@+id/va_location"
+            android:layout_width="15dp"
+            android:layout_height="15dp">
+
+            <ProgressBar
+                android:id="@+id/pbar_location"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:indeterminateDrawable="@drawable/location_bar" />
+
+            <ImageView
+                android:id="@+id/img_location"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/list_refresh_normal" />
+        </ViewAnimator>
+    </LinearLayout>
+</LinearLayout>

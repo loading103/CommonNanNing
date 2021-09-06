@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="right"
+    android:layout_marginLeft="@dimen/dp_30"
+    android:background="@android:color/transparent"
+    android:gravity="top|right"
+    android:orientation="horizontal"
+    android:padding="@dimen/dp_6">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:layout_marginRight="@dimen/dp_12"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:gravity="left|center_vertical"
+            android:layout_gravity="right"
+            android:background="@drawable/zhzx_voice_new"
+            android:id="@+id/item_robot_chat_tv_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="sdfsdsdfffffsddffffffffffffffffdffdfdfdfdfffdfdffsd"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_14"/>
+    </LinearLayout>
+
+
+    <io.agora.yview.img.CircleImageView
+        android:id="@+id/item_robot_chat_iv_me"
+        android:layout_width="@dimen/dp_45"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_gravity="bottom"
+        android:src="@mipmap/robot_headimage" />
+</LinearLayout>

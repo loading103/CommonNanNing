@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.daqsoft.commonnanning.ui.main.CommentMoreActivity">
+
+    <com.example.tomasyb.baselib.widget.HeadView
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <!--智能刷新控件-->
+    <com.example.tomasyb.baselib.refresh.SmartRefreshLayout
+        android:id="@+id/refreshlayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:srlEnablePreviewInEditMode="false">
+        <!--头部-->
+        <com.example.tomasyb.baselib.refresh.header.ClassicsHeader
+            app:srlAccentColor="@color/main_gray"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srlFinishDuration="500"
+            app:srlEnableLastTime="true"
+            app:srlClassicsSpinnerStyle="FixedBehind"
+            app:srlTextSizeTitle="@dimen/sp_16"
+            app:srlTextSizeTime="@dimen/dp_10"
+            app:srlTextTimeMarginTop="2dp"
+            app:srlDrawableArrowSize="@dimen/dp_20"
+            app:srlDrawableProgressSize="@dimen/dp_20"
+            app:srlDrawableMarginRight="@dimen/dp_20"
+            app:srlDrawableProgress="@drawable/ic_progress_puzzle"/>
+        <ViewAnimator
+            android:id="@+id/pan_va"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <android.support.v7.widget.RecyclerView
+                android:padding="@dimen/dp_10"
+                android:id="@+id/mpanlist_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+            <include layout="@layout/include_noda"/>
+        </ViewAnimator>
+    </com.example.tomasyb.baselib.refresh.SmartRefreshLayout>
+    <TextView
+        android:id="@+id/tv_wite_comment"
+        android:gravity="center"
+        android:textSize="@dimen/sp_16"
+        android:textColor="@color/main_white"
+        android:background="@color/main_default"
+        android:text="写评论"
+        android:padding="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_scenic_two_ll"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dp_8"
+    android:layout_marginBottom="@dimen/dp_8"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_172"
+        android:layout_margin="@dimen/dp_16"
+        android:clickable="true"
+        android:foreground="?attr/selectableItemBackground"
+        app:cardCornerRadius="@dimen/dp_6"
+        app:cardElevation="@dimen/dp_3">
+
+        <ImageView
+            android:id="@+id/mCoverIv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY" />
+
+
+    </android.support.v7.widget.CardView>
+
+    <TextView
+        android:id="@+id/mNameTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginRight="@dimen/dp_16"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textColor="@color/main_black"
+        android:textSize="@dimen/sp_16"
+        android:textStyle="bold"
+        tools:text="乌鲁木齐魅力一日游" />
+
+    <TextView
+        android:id="@+id/mIntroTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_8"
+        android:layout_marginRight="@dimen/dp_16"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textColor="@color/txt_gray"
+        android:textSize="@dimen/sp_13"
+        tools:text="我是简介，填写就显示，未填就不显示" />
+
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_16"
+        android:layout_marginBottom="@dimen/dp_18"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/mTimeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/home_festival_time"
+            android:drawablePadding="@dimen/dp_5"
+            android:textColor="@color/main_gray"
+            android:textSize="@dimen/sp_13"
+            tools:text="2018-01-24" />
+
+        <TextView
+            android:id="@+id/tv_point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:drawableLeft="@mipmap/zuji_jingqu"
+            android:drawablePadding="@dimen/dp_5"
+            android:textColor="@color/main_gray"
+            android:textSize="@dimen/sp_13"
+            tools:text="12个景区" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginRight="@dimen/dp_16"
+        android:background="#e2e2e2" />
+</LinearLayout>
